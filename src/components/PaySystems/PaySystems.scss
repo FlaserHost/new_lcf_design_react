@@ -1,0 +1,33 @@
+@import '../../scss/mixins.scss';
+
+.main-content {
+  &__pay-systems,
+  &__pay-systems > .section-wrapper {
+    width: 100%;
+    @include flexPos(center);
+  }
+
+  &__pay-systems > .section-wrapper {
+    max-width: $maxWidth;
+  }
+
+  &__pay-systems .site-title {
+    font-size: 32px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__pay-systems .site-title > span {
+    font-size: 18px;
+    display: block;
+  }
+
+  .pay-systems {
+    margin-top: 50px;
+    width: 70%;
+  }
+
+  .wrapped-platform {
+    @include flexPos($vertical: center, $direction: column);
+  }
+}

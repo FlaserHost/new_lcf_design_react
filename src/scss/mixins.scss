@@ -1,0 +1,28 @@
+@mixin flexPos ($horizontal: false, $vertical: false, $direction: false, $wrap: false) {
+  display: flex;
+
+  @if $horizontal {
+    justify-content: $horizontal;
+  }
+
+  @if $vertical {
+    align-items: $vertical;
+  }
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+}
+
+@mixin coordinates ($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+$maxWidth: 1750px;
