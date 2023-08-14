@@ -43,3 +43,27 @@ export const getWordEnding = count => {
 }
 
 export const calculate = cart => Array.from(cart).reduce((sum, item) => sum + item.item_cost, 0);
+
+export const amountChanger = (sign, myCart, id, setMyCart, setAmount, test, input = 0) => {
+    const currentCartItem = myCart.get(id);
+    const price = currentCartItem.item_price;
+    let amount = currentCartItem.item_amount;
+    let newCost;
+
+    if (sign === '+') {
+        amount++;
+    } else if (sign === '-') {
+        amount = amount > 1 ? --amount : 1;
+    } else {
+        amount = input > 0 ? input : 1;
+    }
+
+    newCost = price * amount;
+    myCart.set(id, {...currentCartItem, item_amount: amount, item_cost: newCost});
+    save(myCart);
+    setAmount(amount);
+}
+
+export const test = setAmount => {
+    setAmount(prev => prev + 1);
+}

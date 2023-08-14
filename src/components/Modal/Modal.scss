@@ -212,15 +212,6 @@
         text-align: center;
       }
 
-      .total-cart-sum {
-        width: 100%;
-        text-align: right;
-        color: #fff;
-        font-weight: 900;
-        font-size: 24px;
-        padding-top: 20px;
-      }
-
       .cart-item-delete {
         display: flex;
         justify-content: center;
@@ -234,5 +225,14 @@
         height: 30px;
       }
     }
+  }
+
+  .total-cart-sum {
+    width: 100%;
+    text-align: right;
+    color: #fff;
+    font-weight: 900;
+    font-size: 24px;
+    padding-top: 20px;
   }
 }

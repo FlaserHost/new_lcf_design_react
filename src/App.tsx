@@ -28,7 +28,7 @@ const App = () => {
 
   return (
      <HelmetProvider>
-         {modal && <Modal classes={classes} myCart={myCart} setModal={setModal} />}
+         {modal && <Modal classes={classes} myCart={myCart} setModal={setModal} setMyCart={setMyCart} />}
          <Header cartSize={cartSize} setModal={setModal} />
          <Main
              myCart={myCart}

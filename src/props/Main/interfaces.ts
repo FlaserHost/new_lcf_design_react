@@ -7,6 +7,8 @@ export interface StatesProps {
     setCartSize?: any;
     setModal?: any;
     setModalClasses?: any;
+
+    itemParams?: any;
 }
 
 export interface GoodsProps extends StatesProps {
