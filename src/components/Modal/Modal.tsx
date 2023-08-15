@@ -51,10 +51,30 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
                                     <div className="total-cart-sum">
                                         <span>Сумма: {totalCartSumm} ₽</span>
                                     </div>
-                                    <article className="cart-title client-data">
-                                        <h2>Оформление заказа</h2>
-
-                                    </article>
+                                    <section className="client-data">
+                                        <div className="cart-title">
+                                            <h2>Оформление заказа</h2>
+                                        </div>
+                                        <section className="contact-information">
+                                            <form action="#" method="POST">
+                                                <h3>1. Контактная информация</h3>
+                                                <div className="contact-fields">
+                                                    <div className="contact-field-area">
+                                                        <label htmlFor="fio-field">ФИО</label>
+                                                        <input className="contact-field fio-field" id="fio-field" name="fio-field" type="text" required />
+                                                    </div>
+                                                    <div className="contact-field-area">
+                                                        <label htmlFor="phone-field">Телефон</label>
+                                                        <input className="contact-field phone-field" id="phone-field" name="phone-field" type="tel" required />
+                                                    </div>
+                                                    <div className="contact-field-area">
+                                                        <label htmlFor="email-field">Email</label>
+                                                        <input className="contact-field email-field" id="email-field" name="email-field" type="email" />
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </section>
+                                    </section>
                                 </>)
                         }
                     </div>

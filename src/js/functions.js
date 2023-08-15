@@ -58,15 +58,18 @@ export const amountChanger = (sign, myCart, id, setMyCart, setNewParams, input =
 
     if (sign !== 'input') {
         sign === '+' ? amount++ : amount--;
+        if (amount < 1) amount = 1;
     } else {
         amount = input;
     }
-
-    if (amount < 1) amount = 1;
 
     newCost = price * amount;
     myCart.set(id, {...currentCartItem, item_amount: amount, item_cost: newCost});
     save(myCart);
     setMyCart(new Map(myCart));
     setNewParams({amount: amount, cost: newCost});
+}
+
+export const fieldChecker = (sign, myCart, id, setMyCart, setNewParams, input = 0) => {
+    (input === '' || input <= 0) && amountChanger(sign, myCart, id, setMyCart, setNewParams, 1);
 }
