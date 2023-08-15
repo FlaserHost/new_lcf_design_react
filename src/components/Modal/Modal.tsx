@@ -8,11 +8,11 @@ import './Modal.scss';
 // @ts-ignore
 import empty from './empty-cart.svg';
 
-export const Modal = ({ classes, myCart, setModal, setMyCart }: ModalProps) => {
+export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }: ModalProps) => {
     const zero = myCart.size === 0;
     const emptyOrFull = classNames('modal-body', zero ? 'cart-is-empty' : 'cart');
 
-    const cartItems = !zero ? Array.from(myCart.values()).map((item: any) => <CartItem myCart={myCart} setMyCart={setMyCart} itemParams={item} key={item.item_id} />) : '';
+    const cartItems = !zero ? Array.from(myCart.values()).map((item: any) => <CartItem myCart={myCart} setMyCart={setMyCart} itemParams={item} setModalClasses={setModalClasses} key={item.item_id} />) : '';
 
     const ending = getWordEnding(myCart.size);
     const totalCartSumm = calculate(myCart.values());

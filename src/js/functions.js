@@ -4,9 +4,9 @@ const save = myCart => localStorage.myCart = JSON.stringify(Array.from(myCart.va
 export const modalBody = (cartSize, setModalClasses) => setModalClasses(['modal-layer', cartSize === 0 ? 'align-center' : 'align-start']);
 
 // добавление в корзину
-export const addToCart = (setAdded, myCart, setMyCart, good, good_id, setModalClasses) => {
+export const addToCart = (setAdded, myCart, setMyCart, good, setModalClasses) => {
     setAdded(prev => !prev);
-    myCart.set(good_id, {...good, inCart: setAdded});
+    myCart.set(good.item_id, {...good, inCart: setAdded});
     save(myCart);
     setMyCart(myCart);
     modalBody(myCart.size, setModalClasses);
@@ -41,12 +41,13 @@ export const getWordEnding = count => {
 
 export const calculate = cart => Array.from(cart).reduce((sum, item) => sum + item.item_cost, 0);
 
-export const deleteCartItem = (myCart, setMyCart, id) => {
+export const deleteCartItem = (myCart, setMyCart, id, setModalClasses) => {
     const item = myCart.get(id);
     item.inCart(false);
     myCart.delete(id);
     save(myCart);
     setMyCart(new Map(myCart));
+    modalBody(myCart.size, setModalClasses);
 }
 
 export const amountChanger = (sign, myCart, id, setMyCart, setNewParams, input = 0) => {
@@ -66,5 +67,6 @@ export const amountChanger = (sign, myCart, id, setMyCart, setNewParams, input =
     newCost = price * amount;
     myCart.set(id, {...currentCartItem, item_amount: amount, item_cost: newCost});
     save(myCart);
+    setMyCart(new Map(myCart));
     setNewParams({amount: amount, cost: newCost});
 }

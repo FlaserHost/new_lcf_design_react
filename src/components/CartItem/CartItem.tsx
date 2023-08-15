@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { amountChanger, deleteCartItem } from "../../js/functions";
 import { StatesProps } from "../../props/Main/interfaces";
 
-export const CartItem = ({ myCart, setMyCart, itemParams }: StatesProps) => {
+export const CartItem = ({ myCart, setMyCart, itemParams, setModalClasses }: StatesProps) => {
     const [newParams, setNewParams] = useState({amount: itemParams.item_amount, cost: itemParams.item_cost});
     const forAmountChanger = [myCart, itemParams.item_id, setMyCart, setNewParams];
 
@@ -28,7 +28,7 @@ export const CartItem = ({ myCart, setMyCart, itemParams }: StatesProps) => {
                 <span>{newParams.cost} ₽</span>
             </div>
             <div className="cart-item-delete">
-                <button className="cart-item-delete-btn trash" type="button" onClick={() => deleteCartItem(myCart, setMyCart, itemParams.item_id)}></button>
+                <button className="cart-item-delete-btn trash" type="button" onClick={() => deleteCartItem(myCart, setMyCart, itemParams.item_id, setModalClasses)}></button>
             </div>
         </article>
     );
