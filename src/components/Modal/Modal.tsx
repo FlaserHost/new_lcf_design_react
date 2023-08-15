@@ -51,7 +51,8 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
                                     <div className="total-cart-sum">
                                         <span>Сумма: {totalCartSumm} ₽</span>
                                     </div>
-                                    <article className="client-data">
+                                    <article className="cart-title client-data">
+                                        <h2>Оформление заказа</h2>
 
                                     </article>
                                 </>)

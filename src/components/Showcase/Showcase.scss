@@ -22,16 +22,14 @@
   }
 
   .group-wrapper > h2:before,
-  .group-wrapper > h2:after,
-  .cart-title:before {
+  .group-wrapper > h2:after {
     content: '';
     display: block;
     background-color: #f18700;
     position: absolute;
   }
 
-  .group-wrapper > h2:before,
-  .cart-title:before {
+  .group-wrapper > h2:before {
     width: 10px;
     height: 100%;
     left: 0;

@@ -235,4 +235,22 @@
     font-size: 24px;
     padding-top: 20px;
   }
+
+  .cart-title:before {
+    content: '';
+    display: block;
+    background-color: #f18700;
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    left: 0;
+  }
+
+  .client-data {
+    margin-top: 30px;
+  }
+
+  .client-data > h2 {
+    font-size: 36px;
+  }
 }
