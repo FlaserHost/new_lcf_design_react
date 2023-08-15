@@ -3,14 +3,13 @@ import { GoodsProps } from "../../props/Main/interfaces";
 import './Showcase.scss';
 import { Goods } from "../Goods/Goods";
 
-export const Showcase = ({ goods, anchors, myCart, setMyCart, setCartSize, setModalClasses }: GoodsProps) => {
+export const Showcase = ({ goods, anchors, myCart, setMyCart, setModalClasses }: GoodsProps) => {
     const goodsGroups = Object.values(goods).map((item, index) => {
         const group = item.items.map((good: any) => <Goods
             good={good}
             index={index}
             myCart={myCart}
             setMyCart={setMyCart}
-            setCartSize={setCartSize}
             setModalClasses={setModalClasses}
             key={good.item_id}
         />);

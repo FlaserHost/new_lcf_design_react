@@ -9,7 +9,6 @@ import classNames from "classnames";
 
 const App = () => {
     const [myCart, setMyCart] = useState(new Map());
-    const [cartSize, setCartSize] = useState(0);
     const [modal, setModal] = useState(false);
     const [modalClasses, setModalClasses] = useState(['modal-layer']);
 
@@ -20,7 +19,6 @@ const App = () => {
             setMyCart(myCart);
         }
 
-        setCartSize(myCart.size);
         modalBody(myCart.size, setModalClasses);
     }, []);
 
@@ -29,13 +27,8 @@ const App = () => {
   return (
      <HelmetProvider>
          {modal && <Modal classes={classes} myCart={myCart} setModal={setModal} setMyCart={setMyCart} />}
-         <Header cartSize={cartSize} setModal={setModal} />
-         <Main
-             myCart={myCart}
-             setMyCart={setMyCart}
-             setCartSize={setCartSize}
-             setModalClasses={setModalClasses}
-         />
+         <Header cartSize={myCart.size} setModal={setModal} />
+         <Main myCart={myCart} setMyCart={setMyCart} setModalClasses={setModalClasses} />
          <Footer />
      </HelmetProvider>
   );

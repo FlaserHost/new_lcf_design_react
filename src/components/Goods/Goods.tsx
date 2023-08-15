@@ -2,16 +2,16 @@ import React, {useEffect, useState} from "react";
 import { addToCart } from "../../js/functions";
 import { StatesProps } from "../../props/Main/interfaces";
 
-export const Goods = ({ myCart, setMyCart, good, index, setCartSize, setModalClasses }: StatesProps) => {
+export const Goods = ({ myCart, setMyCart, good, index, setModalClasses }: StatesProps) => {
     const [added, setAdded] = useState(false);
-    const dataToSend = [setAdded, myCart, setMyCart, setCartSize, good, good.item_id, setModalClasses];
+    const dataToSend = [setAdded, myCart, setMyCart, good, good.item_id, setModalClasses];
 
     useEffect(() => {
         if (myCart.size > 0) {
             const currentGood = myCart.get(good.item_id);
             if (currentGood !== undefined) {
                 setAdded(prev => !prev);
-                myCart.set(good.item_id, {...good, setAddedState: setAdded});
+                myCart.set(good.item_id, {...good, inCart: setAdded});
                 setMyCart(myCart);
             }
         }

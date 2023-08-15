@@ -8,7 +8,7 @@ import { Photos } from "../Photos/Photos";
 import './Main.scss';
 import { StatesProps } from "../../props/Main/interfaces";
 
-export const Main = ({ myCart, setMyCart, setCartSize, setModalClasses }: StatesProps) => {
+export const Main = ({ myCart, setMyCart, setModalClasses }: StatesProps) => {
     const anchors = Object.keys(goods);
     return (
         <main className="main-content">
@@ -19,7 +19,6 @@ export const Main = ({ myCart, setMyCart, setCartSize, setModalClasses }: States
                 anchors={anchors}
                 myCart={myCart}
                 setMyCart={setMyCart}
-                setCartSize={setCartSize}
                 setModalClasses={setModalClasses}
             />
             <PaySystems />
