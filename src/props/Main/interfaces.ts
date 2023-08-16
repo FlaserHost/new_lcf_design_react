@@ -24,7 +24,7 @@ export interface ModalFieldsProps {
     label: string;
     areaType: string;
     id: string;
-    type: string;
+    type?: string;
 
     required?: boolean;
 }

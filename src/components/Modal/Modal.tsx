@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { CartItem } from "../CartItem/CartItem";
 import { getWordEnding, calculate } from "../../js/functions";
 import { ModalField } from "../ModalField/ModalField";
+import { Districts } from "../DropDownList/Districts/Districts";
 import './Modal.scss';
 // @ts-ignore
 import empty from './empty-cart.svg';
@@ -87,6 +88,7 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
                                                     <div className="delivery-address">
                                                         <h3>Адрес {radio.address_type}</h3>
                                                         <div className="address-fields">
+                                                            <Districts areaType="address" label="Укажите район" id="district-field" required={true} />
                                                             <ModalField areaType="address" label="Укажите улицу" id="street-field" type="text" required={true} />
                                                             <ModalField areaType="address" label="№ дома" id="house-field" type="text" required={true} />
                                                             <ModalField areaType="address" label="Подъезд" id="entrance-field" type="number" />

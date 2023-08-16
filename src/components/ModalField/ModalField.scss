@@ -34,13 +34,17 @@
     border: 1px solid #f18700;
     border-radius: 10px;
     width: 280px;
+    height: 60px;
     padding: 15px;
     position: relative;
   }
 
   textarea {
     resize: none;
-    height: 55px;
+  }
+
+  textarea::-webkit-scrollbar {
+    width: 0;
   }
 
   input::-webkit-outer-spin-button,
@@ -51,8 +55,18 @@
   input[type='number'] {
     -moz-appearance: textfield;
   }
+
+  textarea + label {
+    top: 35%;
+  }
+
+  .comment-field {
+    min-height: 74px;
+  }
 }
 
-.address-field-area > label {
-  transform: translateY(-63%);
+.address-field-area {
+  margin-top: 0;
 }
+
+

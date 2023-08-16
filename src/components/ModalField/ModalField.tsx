@@ -7,6 +7,11 @@ export const ModalField = (props: ModalFieldsProps) => {
     const [shift, setShift] = useState('');
     const areaClasses = classNames(`${props.areaType}-field-area`, 'field-area', shift);
 
+    const resizeTextarea = (e: any) => {
+        e.target.style.height = "auto";
+        e.target.style.height = e.target.scrollHeight + "px";
+    }
+
     const insert = props.type !== 'textarea'
         ? (<input
             className={`${props.areaType}-field modal-field ${props.id}`}
@@ -24,12 +29,13 @@ export const ModalField = (props: ModalFieldsProps) => {
             required={props.required}
             onFocus={() => setShift('shifted')}
             onBlur={e => e.target.value === '' && setShift('')}
-        ></textarea>)
+            onInput={e => resizeTextarea(e)}
+        ></textarea>);
 
     return (
         <div className={areaClasses}>
-            <label htmlFor={props.id}>{props.label}{props.required && <span className="required-star">*</span>}</label>
             {insert}
+            <label htmlFor={props.id}>{props.label}{props.required && <span className="required-star">*</span>}</label>
         </div>
     );
 }

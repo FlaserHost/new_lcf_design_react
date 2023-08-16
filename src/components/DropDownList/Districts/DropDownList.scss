@@ -1,0 +1,12 @@
+select {
+  background-color: transparent;
+  color: #fff;
+}
+
+select > option {
+  color: #000;
+}
+
+.required-star {
+  color: #f18700;
+}
