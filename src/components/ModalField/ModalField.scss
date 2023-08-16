@@ -1,0 +1,58 @@
+.field-area {
+  position: relative;
+  margin-top: 20px;
+
+  .modal-field,
+  label {
+    font-size: 18px;
+  }
+
+  label {
+    color: #fff;
+    padding: 0 10px;
+    text-align: center;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s;
+    background-color: #504B4A;
+    pointer-events: none;
+
+    & > .required-star {
+      color: #f18700;
+    }
+  }
+
+  &.shifted label {
+    font-size: 14px;
+    top: 0;
+    z-index: 2;
+  }
+
+  .modal-field {
+    border: 1px solid #f18700;
+    border-radius: 10px;
+    width: 280px;
+    padding: 15px;
+    position: relative;
+  }
+
+  textarea {
+    resize: none;
+    height: 55px;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+.address-field-area > label {
+  transform: translateY(-63%);
+}

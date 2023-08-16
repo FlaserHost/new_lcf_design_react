@@ -19,3 +19,12 @@ export interface GoodsProps extends StatesProps {
 export interface ModalProps extends StatesProps {
     classes: string;
 }
+
+export interface ModalFieldsProps {
+    label: string;
+    areaType: string;
+    id: string;
+    type: string;
+
+    required?: boolean;
+}
