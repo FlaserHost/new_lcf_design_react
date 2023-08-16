@@ -7,7 +7,6 @@ export interface StatesProps {
     setCartSize?: any;
     setModal?: any;
     setModalClasses?: any;
-
     itemParams?: any;
 }
 
@@ -22,9 +21,8 @@ export interface ModalProps extends StatesProps {
 
 export interface ModalFieldsProps {
     label: string;
-    areaType: string;
+    areaType?: string;
     id: string;
     type?: string;
-
     required?: boolean;
 }

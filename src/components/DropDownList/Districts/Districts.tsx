@@ -1,15 +1,111 @@
-import React from "react";
+import React, { useState } from "react";
 import { ModalFieldsProps } from "../../../props/Main/interfaces";
+import Select from 'react-select'
 import { districts } from "./DistrictList";
-import "./DropDownList.scss"
+import classNames from "classnames";
 
 export const Districts = (props: ModalFieldsProps) => {
+    const [selected, setSelected] = useState(null);
+
+    const districtsObj = districts.map(district => {
+        return {
+            value: district[0],
+            label: district[1]
+        };
+    });
+
+    const options = [...districtsObj];
+    const handleChange = (value: any) => setSelected(value);
+    const customNoOptionsMessage = ({ inputValue }: any) => `Района ${inputValue} не существует`;
+    const selectClasses = classNames('react-select-container', props.id);
+
+    const customStyles = {
+        container: (defaultStyles: any) => ({
+            ...defaultStyles,
+            width: '100%',
+            gridColumn: '1 / 4',
+            color: '#fff',
+        }),
+        control: (defaultStyles: any) => ({
+            ...defaultStyles,
+            backgroundColor: 'transparent',
+            padding: '0 10px',
+            border: '1px solid #f18700',
+            height: '56px',
+            borderRadius: '10px',
+            width: '100%',
+            outline: 'none',
+            boxShadow: 'none',
+            cursor: 'pointer',
+            '&:hover': {
+                color: '#fff',
+            },
+            '&:hover .react-select__indicator': {
+                color: '#f18700',
+            },
+        }),
+        option: (defaultStyles: any, state: any) => ({
+            ...defaultStyles,
+            color: state.isSelected ? '#000' : state.isFocused ? '#000' : '#fff',
+            backgroundColor: state.isSelected
+                ? "#ffd700"
+                : state.isFocused
+                    ? "#f18700"
+                    : undefined,
+            cursor: 'pointer',
+        }),
+        singleValue: (defaultStyles: any) => ({
+            ...defaultStyles,
+            color: '#fff',
+            fontSize: '18px',
+        }),
+        indicatorSeparator: () => ({
+            display: 'none',
+        }),
+        dropdownIndicator: (defaultStyles: any) => ({
+            ...defaultStyles,
+            color: '#fff',
+            '&:hover': {
+                color: '#f18700',
+            },
+        }),
+        placeholder: (defaultStyles: any) => ({
+            ...defaultStyles,
+            color: '#fff',
+            fontSize: '18px',
+            position: 'relative',
+            '&::after': {
+                content: props.required ? '"*"' : '""',
+                color: '#f18700',
+            },
+        }),
+        input: (defaultStyles: any) => ({
+            ...defaultStyles,
+            color: '#fff',
+            fontSize: '18px',
+        }),
+        menu: (defaultStyles: any) => ({
+            ...defaultStyles,
+            backgroundColor: '#504B4A',
+        }),
+        noOptionsMessage: (defaultStyles: any) => ({
+            ...defaultStyles,
+            color: '#fff',
+            backgroundColor: '#ff6666'
+        }),
+    }
+
     return (
-        <div className={`${props.areaType}-field-area field-area`}>
-            <select className={`${props.areaType}-field modal-field district-field`} id={props.id} name={props.id}>
-                <option id="option-0" value="0" key={0}>{props.label}{props.required && <span className="required-star">*</span>}</option>
-                {districts.map(district => <option id={`option-${district[0]}`} value={district[0]} key={district[0]}>{district[1]}</option>)}
-            </select>
-        </div>
+        <Select
+            className={selectClasses}
+            classNamePrefix="react-select"
+            options={options}
+            value={selected}
+            styles={customStyles}
+            onChange={handleChange}
+            name={props.id}
+            placeholder={props.label}
+            noOptionsMessage={customNoOptionsMessage}
+        />
     );
 }
