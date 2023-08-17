@@ -1,22 +1,24 @@
 import React, { useState } from "react";
-import { ModalFieldsProps } from "../../../props/Main/interfaces";
+import { ModalFieldsProps } from "../../props/Main/interfaces";
 import Select from 'react-select'
-import { districts } from "./DistrictList";
 import classNames from "classnames";
 
-export const Districts = (props: ModalFieldsProps) => {
+export const List = (props: ModalFieldsProps) => {
     const [selected, setSelected] = useState(null);
 
-    const districtsObj = districts.map(district => {
+    const obj = props.list.map((item: any) => {
         return {
-            value: district[0],
-            label: district[1]
+            value: item[0],
+            label: item[1]
         };
     });
 
-    const options = [...districtsObj];
+    const property = props.label.split(' ')[1];
+    let emptyNotice = property !== 'время' ? property : 'времени';
+
+    const options = [...obj];
     const handleChange = (value: any) => setSelected(value);
-    const customNoOptionsMessage = ({ inputValue }: any) => `Района ${inputValue} не существует`;
+    const customNoOptionsMessage = ({ inputValue }: any) => `${emptyNotice} ${inputValue} не существует`;
     const selectClasses = classNames('react-select-container', props.id);
 
     const customStyles = {
