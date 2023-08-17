@@ -14,6 +14,7 @@ import empty from './empty-cart.svg';
 
 export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }: ModalProps) => {
     const [radio, setRadio] = useState({class: 'delivery', address_type: 'доставки'});
+    const [selfAddress, setSelfAddress] = useState<{ city?: {}, district?: {}, street?: string, house?: string } | null>(null);
 
     const zero = myCart.size === 0;
     const emptyOrFull = classNames('modal-body', zero ? 'cart-is-empty' : 'cart');
@@ -29,6 +30,24 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
 
     const ending = getWordEnding(myCart.size);
     const totalCartSumm = calculate(myCart.values());
+
+    const tabsActions = (selectedTab: any, address: any) => {
+        setRadio(selectedTab);
+        setSelfAddress(address);
+    }
+
+    const selfDeliveryAddress = {
+        city: {
+            label: 'Волгоград',
+            value: 1
+        },
+        district: {
+            label: 'Центральный',
+            value: 8
+        },
+        street: 'Советская',
+        house: '27'
+    }
 
     return (
         <>
@@ -83,11 +102,11 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
                                                     <div className="delivery-checkboxes">
                                                         <div className={radioClasses}>
                                                             <div className="pseudo-element"></div>
-                                                            <div className="radio-area" onClick={() => setRadio({class: 'delivery', address_type: 'доставки'})}>
+                                                            <div className="radio-area" onClick={() => tabsActions({class: 'delivery', address_type: 'доставки'}, null)}>
                                                                 <input id="delivery" type="radio" name="delivery-type" defaultChecked hidden />
                                                                 <label htmlFor="delivery">Доставка</label>
                                                             </div>
-                                                            <div className="radio-area" onClick={() => setRadio({class: 'self-delivery', address_type: 'получения'})}>
+                                                            <div className="radio-area" onClick={() => tabsActions({class: 'self-delivery', address_type: 'получения'}, selfDeliveryAddress)}>
                                                                 <input id="self-delivery" type="radio" name="delivery-type" hidden />
                                                                 <label htmlFor="self-delivery">Самовывоз</label>
                                                             </div>
@@ -96,10 +115,10 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
                                                     <div className="delivery-address">
                                                         <h3>Адрес {radio.address_type}</h3>
                                                         <div className="address-fields">
-                                                            <List label="Укажите город" id="city-field" list={cities} required={true} />
-                                                            <List label="Укажите район" id="district-field" list={districts} required={true} />
-                                                            <ModalField areaType="address" label="Укажите улицу" id="street-field" type="text" required={true} />
-                                                            <ModalField areaType="address" label="№ дома" id="house-field" type="text" required={true} />
+                                                            <List label="Укажите город" id="city-field" list={cities} selfAddress={(selfAddress && selfAddress.city) ? selfAddress.city : selfAddress } required={true} />
+                                                            <List label="Укажите район" id="district-field" list={districts} selfAddress={(selfAddress && selfAddress.district) ? selfAddress.district : selfAddress } required={true} />
+                                                            <ModalField areaType="address" label="Укажите улицу" id="street-field" type="text" selfAddress={(selfAddress && selfAddress.street) ? selfAddress.street : '' }  required={true} />
+                                                            <ModalField areaType="address" label="№ дома" id="house-field" type="text" selfAddress={(selfAddress && selfAddress.house) ? selfAddress.house : '' } required={true} />
                                                             <ModalField areaType="address" label="Подъезд" id="entrance-field" type="number" />
                                                             <ModalField areaType="address" label="Этаж" id="floor-field" type="number" />
                                                             <ModalField areaType="address" label="№ квартиры/офиса" id="flat-field" type="number" />

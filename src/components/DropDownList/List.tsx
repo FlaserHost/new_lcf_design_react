@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ModalFieldsProps } from "../../props/Main/interfaces";
 import Select from 'react-select'
 import classNames from "classnames";
@@ -104,7 +104,7 @@ export const List = (props: ModalFieldsProps) => {
             className={selectClasses}
             classNamePrefix="react-select"
             options={options}
-            value={selected}
+            value={props.selfAddress || selected}
             styles={customStyles}
             onChange={handleChange}
             name={props.id}

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef} from "react";
 import { ModalFieldsProps } from "../../props/Main/interfaces";
 import './ModalField.scss';
 import classNames from "classnames";
 
 export const ModalField = (props: ModalFieldsProps) => {
     const [shift, setShift] = useState('');
+    const [value, setValue] = useState<string>('');
+    const inputRef = useRef<HTMLInputElement>(null);
     const areaClasses = classNames(`${props.areaType}-field-area`, 'field-area', shift);
 
     const resizeTextarea = (e: any) => {
@@ -12,15 +14,28 @@ export const ModalField = (props: ModalFieldsProps) => {
         e.target.style.height = e.target.scrollHeight + "px";
     }
 
+    useEffect(() => {
+        if (props.selfAddress) {
+            setShift('shifted');
+        } else if (inputRef.current && inputRef.current.value === '') {
+            setShift('');
+        }
+    }, [props.selfAddress])
+
+    const insertValue = (value: string) => setValue(value);
+
     const insert = props.type !== 'textarea'
         ? (<input
             className={`${props.areaType}-field modal-field ${props.id}`}
             id={props.id}
+            ref={inputRef}
             name={props.id}
             type={props.type}
+            value={props.selfAddress || value}
             required={props.required}
             onFocus={() => setShift('shifted')}
             onBlur={e => e.target.value === '' && setShift('')}
+            onChange={e => insertValue(e.target.value)}
         />)
         : (<textarea
             className={`${props.areaType}-field modal-field ${props.id}`}
