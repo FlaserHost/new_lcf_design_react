@@ -6,6 +6,7 @@ import { CartItem } from "../CartItem/CartItem";
 import { getWordEnding, calculate } from "../../js/functions";
 import { ModalField } from "../ModalField/ModalField";
 import { List } from "../DropDownList/List";
+import { cities } from "../DropDownList/Lists";
 import { districts } from "../DropDownList/Lists";
 import './Modal.scss';
 // @ts-ignore
@@ -18,7 +19,13 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
     const emptyOrFull = classNames('modal-body', zero ? 'cart-is-empty' : 'cart');
     const radioClasses = classNames('checkboxes-wrapper', radio.class);
 
-    const cartItems = !zero ? Array.from(myCart.values()).map((item: any) => <CartItem myCart={myCart} setMyCart={setMyCart} itemParams={item} setModalClasses={setModalClasses} key={item.item_id} />) : '';
+    const cartItems = !zero ? Array.from(myCart.values()).map((item: any) => <CartItem
+        myCart={myCart}
+        setMyCart={setMyCart}
+        itemParams={item}
+        setModalClasses={setModalClasses}
+        key={item.item_id}
+    />) : '';
 
     const ending = getWordEnding(myCart.size);
     const totalCartSumm = calculate(myCart.values());
@@ -89,6 +96,7 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
                                                     <div className="delivery-address">
                                                         <h3>Адрес {radio.address_type}</h3>
                                                         <div className="address-fields">
+                                                            <List label="Укажите город" id="city-field" list={cities} required={true} />
                                                             <List label="Укажите район" id="district-field" list={districts} required={true} />
                                                             <ModalField areaType="address" label="Укажите улицу" id="street-field" type="text" required={true} />
                                                             <ModalField areaType="address" label="№ дома" id="house-field" type="text" required={true} />

@@ -15,6 +15,8 @@ export const List = (props: ModalFieldsProps) => {
 
     const property = props.label.split(' ')[1];
     let emptyNotice = property !== 'время' ? property : 'времени';
+    const firstLetter = emptyNotice.split('')[0].toUpperCase();
+    emptyNotice = firstLetter + emptyNotice.substring(1);
 
     const options = [...obj];
     const handleChange = (value: any) => setSelected(value);

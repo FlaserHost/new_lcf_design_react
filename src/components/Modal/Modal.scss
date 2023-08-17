@@ -352,12 +352,13 @@
       }
 
       .address-fields > .field-area:first-child,
+      .address-fields > .field-area:nth-child(2),
       .address-fields > .field-area:last-child {
         width: 100%;
         grid-column: 1 / 4;
       }
 
-      .address-fields > .field-area:nth-child(2) {
+      .address-fields > .field-area:nth-child(3) {
         width: 100%;
         grid-column: 1 / 3;
       }
