@@ -369,4 +369,9 @@
       }
     }
   }
+
+  .date-time-wrapper {
+    @include flexPos($vertical: flex-start, $direction: column);
+    margin-top: 20px;
+  }
 }

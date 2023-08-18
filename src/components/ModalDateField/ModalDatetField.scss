@@ -4,14 +4,48 @@
   text-transform: capitalize;
 }
 
-.date-time-wrapper {
-  @include flexPos($vertical: flex-start, $direction: column);
+.date-field-wrapper,
+.date-input-field {
+  position: relative;
+}
 
+.date-field-wrapper.shifted > label {
+  top: 0;
+  left: 12px;
+  font-size: 14px;
+  padding: 0 10px;
+  background-color: #504B4A;
+  z-index: 2;
+}
 
+.date-input-field {
+    width: 250px;
+    height: 60px;
+    border: 1px solid #f18700;
+    border-radius: 10px;
+    padding: 0 15px;
+    font-size: 17px;
+    cursor: default;
+
+  & + label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    font-size: 18px;
+    color: #fff;
+    transition: .3s;
+  }
+
+  & + label > .required-star {
+    color: #f18700;
+  }
 }
 
 .calendar {
   background-color: #fff;
+  position: absolute;
+  top: calc(100% + 10px);
 
   .rdp-day_today {
     color: #f18700;

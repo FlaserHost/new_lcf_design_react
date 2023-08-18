@@ -129,7 +129,9 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
                                                 </article>
                                                 <article className="date-time-information">
                                                     <h3>3. Дата и время получения</h3>
-                                                    <ModalDateField id="date-field" label="Укажите дату" required={true} />
+                                                    <div className="date-time-wrapper">
+                                                        <ModalDateField id="date-field" label="Укажите дату" required={true} />
+                                                    </div>
                                                 </article>
                                             </form>
                                         </section>
