@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ModalFieldsProps } from "../../props/Main/interfaces";
 import { DayPicker } from 'react-day-picker';
 import { format } from 'date-fns';
@@ -12,6 +12,23 @@ export const ModalDateField = (props: ModalFieldsProps) => {
     const [selected, setSelected] = useState<Date>();
     const [shift, setShift] = useState('');
     const fieldValue = selected ? format(selected, 'dd.MM.y') : '';
+    const calendarRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: any) => {
+            const path = event.composedPath();
+
+            if (!path.includes(calendarRef.current)) {
+                setCalendar(false);
+            }
+        };
+
+        document.addEventListener('click', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
 
     const today = new Date();
     const fromMonth = new Date(today.getFullYear(), today.getMonth());
@@ -40,12 +57,15 @@ export const ModalDateField = (props: ModalFieldsProps) => {
                     name={props.id}
                     type="text"
                     value={fieldValue}
-                    onClick={() => setCalendar(prev => !prev)}
+                    onClick={e => {
+                        e.stopPropagation();
+                        setCalendar(prev => !prev);
+                    }}
                     required={props.required}
                     readOnly
                 />
                 <label htmlFor={props.id}>{props.label}{props.required && <span className="required-star">*</span>}</label>
-                {calendar && <div className="calendar">
+                {calendar && <div className="calendar" ref={calendarRef}>
                     <DayPicker
                         mode="single"
                         selected={selected}
