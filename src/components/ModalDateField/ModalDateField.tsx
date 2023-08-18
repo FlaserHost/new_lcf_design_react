@@ -11,11 +11,11 @@ export const ModalDateField = (props: ModalFieldsProps) => {
     const [calendar, setCalendar] = useState(false);
     const [selected, setSelected] = useState<Date>();
     const [shift, setShift] = useState('');
+    const calendarRef = useRef<HTMLDivElement>(null);
     const fieldValue = selected ? format(selected, 'dd.MM.y') : '';
-    const calendarRef = useRef(null);
 
     useEffect(() => {
-        const handleClickOutside = (event: any) => {
+        const clickOutside = (event: any) => {
             const path = event.composedPath();
 
             if (!path.includes(calendarRef.current)) {
@@ -23,10 +23,10 @@ export const ModalDateField = (props: ModalFieldsProps) => {
             }
         };
 
-        document.addEventListener('click', handleClickOutside);
+        document.addEventListener('click', clickOutside);
 
         return () => {
-            document.removeEventListener('click', handleClickOutside);
+            document.removeEventListener('click', clickOutside);
         };
     }, []);
 
