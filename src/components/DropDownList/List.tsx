@@ -23,6 +23,20 @@ export const List = (props: ModalFieldsProps) => {
     const customNoOptionsMessage = ({ inputValue }: any) => `${emptyNotice} ${inputValue} не существует`;
     const selectClasses = classNames('react-select-container', props.id);
 
+    const controlDisabledStatus = {
+        controlUndisabled: {
+            border: '1px solid #f18700',
+            cursor: 'pointer',
+        },
+        controlDisabled: {
+            border: '1px solid #888',
+            cursor: 'default',
+        }
+    }
+
+    const controlConfirmedStyles = props.selfAddress === null ? {...controlDisabledStatus.controlUndisabled} : {...controlDisabledStatus.controlDisabled};
+    const singleValueConfirmedStyles = props.selfAddress === null ? {color: '#fff'} : {color: '#888'};
+
     const customStyles = {
         container: (defaultStyles: any) => ({
             ...defaultStyles,
@@ -33,14 +47,13 @@ export const List = (props: ModalFieldsProps) => {
         control: (defaultStyles: any) => ({
             ...defaultStyles,
             backgroundColor: 'transparent',
-            padding: '0 10px',
-            border: '1px solid #f18700',
-            height: '56px',
-            borderRadius: '10px',
-            width: '100%',
             outline: 'none',
             boxShadow: 'none',
-            cursor: 'pointer',
+            padding: '0 10px',
+            width: '100%',
+            height: '56px',
+            borderRadius: '10px',
+            ...controlConfirmedStyles,
             '&:hover': {
                 color: '#fff',
             },
@@ -60,15 +73,15 @@ export const List = (props: ModalFieldsProps) => {
         }),
         singleValue: (defaultStyles: any) => ({
             ...defaultStyles,
-            color: '#fff',
             fontSize: '18px',
+            ...singleValueConfirmedStyles
         }),
         indicatorSeparator: () => ({
             display: 'none',
         }),
         dropdownIndicator: (defaultStyles: any) => ({
             ...defaultStyles,
-            color: '#fff',
+            ...singleValueConfirmedStyles,
             '&:hover': {
                 color: '#f18700',
             },
@@ -110,6 +123,7 @@ export const List = (props: ModalFieldsProps) => {
             name={props.id}
             placeholder={props.label}
             noOptionsMessage={customNoOptionsMessage}
+            isDisabled={!!props.selfAddress}
         />
     );
 }
