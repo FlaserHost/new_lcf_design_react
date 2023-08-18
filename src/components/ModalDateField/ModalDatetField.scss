@@ -1,0 +1,28 @@
+@import '../../scss/mixins.scss';
+
+.rdp-caption_label{
+  text-transform: capitalize;
+}
+
+.date-time-wrapper {
+  @include flexPos($vertical: flex-start, $direction: column);
+
+
+}
+
+.calendar {
+  background-color: #fff;
+
+  .rdp-day_today {
+    color: #f18700;
+  }
+
+  .rdp-day_selected {
+    background-color: #f18700;
+    color: #fff;
+  }
+
+  .rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+    background-color: rgba(241, 135, 0, .4);
+  }
+}

@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { CartItem } from "../CartItem/CartItem";
 import { getWordEnding, calculate } from "../../js/functions";
 import { ModalField } from "../ModalField/ModalField";
+import { ModalDateField } from "../ModalDateField/ModalDateField";
 import { List } from "../DropDownList/List";
 import { cities } from "../DropDownList/Lists";
 import { districts } from "../DropDownList/Lists";
@@ -128,6 +129,7 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
                                                 </article>
                                                 <article className="date-time-information">
                                                     <h3>3. Дата и время получения</h3>
+                                                    <ModalDateField id="date-field" label="Укажите дату" required={true} />
                                                 </article>
                                             </form>
                                         </section>

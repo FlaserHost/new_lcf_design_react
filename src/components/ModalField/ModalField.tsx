@@ -18,7 +18,7 @@ export const ModalField = (props: ModalFieldsProps) => {
     useEffect(() => {
         if (props.selfAddress) {
             setShift('shifted');
-        } else if (inputRef.current && inputRef.current.value === '') {
+        } else if (inputRef.current?.value === '') {
             setShift('');
         }
     }, [props.selfAddress]);
