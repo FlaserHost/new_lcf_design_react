@@ -115,16 +115,19 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
                                                     <div className="delivery-address">
                                                         <h3>Адрес {radio.address_type}</h3>
                                                         <div className="address-fields">
-                                                            <List label="Укажите город" id="city-field" list={cities} selfAddress={(selfAddress && selfAddress.city) ? selfAddress.city : selfAddress } required={true} />
-                                                            <List label="Укажите район" id="district-field" list={districts} selfAddress={(selfAddress && selfAddress.district) ? selfAddress.district : selfAddress } required={true} />
-                                                            <ModalField areaType="address" label="Укажите улицу" id="street-field" type="text" selfAddress={(selfAddress && selfAddress.street) ? selfAddress.street : '' }  required={true} />
-                                                            <ModalField areaType="address" label="№ дома" id="house-field" type="text" selfAddress={(selfAddress && selfAddress.house) ? selfAddress.house : '' } required={true} />
+                                                            <List label="Укажите город" id="city-field" list={cities} selfAddress={(selfAddress && selfAddress.city) ? selfAddress.city : selfAddress} required={true} />
+                                                            <List label="Укажите район" id="district-field" list={districts} selfAddress={(selfAddress && selfAddress.district) ? selfAddress.district : selfAddress} required={true} />
+                                                            <ModalField areaType="address" label="Укажите улицу" id="street-field" type="text" selfAddress={(selfAddress && selfAddress.street) ? selfAddress.street : ''}  required={true} />
+                                                            <ModalField areaType="address" label="№ дома" id="house-field" type="text" selfAddress={(selfAddress && selfAddress.house) ? selfAddress.house : ''} required={true} />
                                                             <ModalField areaType="address" label="Подъезд" id="entrance-field" type="number" />
                                                             <ModalField areaType="address" label="Этаж" id="floor-field" type="number" />
                                                             <ModalField areaType="address" label="№ квартиры/офиса" id="flat-field" type="number" />
                                                             <ModalField areaType="address" label="Комментарий" id="comment-field" type="textarea" />
                                                         </div>
                                                     </div>
+                                                </article>
+                                                <article className="date-time-information">
+                                                    <h3>3. Дата и время получения</h3>
                                                 </article>
                                             </form>
                                         </section>

@@ -37,27 +37,38 @@
     height: 60px;
     padding: 15px;
     position: relative;
+
+    &[disabled] {
+      border: 1px solid #888;
+      color: #888;
+    }
+
+    &[disabled] + label {
+      color: #888;
+    }
   }
 
   textarea {
     resize: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    & + label {
+      top: 27px;
+    }
   }
 
-  textarea::-webkit-scrollbar {
-    width: 0;
-  }
+  input {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
 
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
-
-  input[type='number'] {
-    -moz-appearance: textfield;
-  }
-
-  textarea + label {
-    top: 35%;
+    &[type='number'] {
+      -moz-appearance: textfield;
+    }
   }
 
   .comment-field {
@@ -68,5 +79,3 @@
 .address-field-area {
   margin-top: 0;
 }
-
-

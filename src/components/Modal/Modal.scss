@@ -262,17 +262,18 @@
       margin-top: 30px;
     }
 
-    .contact-information,
-    .delivery-information {
+    & article {
       width: 100%;
       border-radius: 20px;
       background-color: #504B4A;
       padding: 20px 30px 30px;
     }
 
-    .delivery-information {
+    & article:not(:first-child) {
       margin-top: 30px;
+    }
 
+    .delivery-information {
       & .delivery-checkboxes, {
         width: 100%;
         margin-top: 20px;
