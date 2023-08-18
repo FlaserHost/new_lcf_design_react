@@ -9,9 +9,10 @@ import { ModalDateField } from "../ModalDateField/ModalDateField";
 import { List } from "../DropDownList/List";
 import { cities } from "../DropDownList/Lists";
 import { districts } from "../DropDownList/Lists";
+import { times } from "../DropDownList/Lists";
 import './Modal.scss';
 // @ts-ignore
-import empty from './empty-cart.svg';
+import empty from './img/empty-cart.svg';
 
 export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }: ModalProps) => {
     const [radio, setRadio] = useState({class: 'delivery', address_type: 'доставки'});
@@ -131,7 +132,23 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
                                                     <h3>3. Дата и время получения</h3>
                                                     <div className="date-time-wrapper">
                                                         <ModalDateField id="date-field" label="Укажите дату" required={true} />
+                                                        <List label="Укажите время" id="time-field" list={times} selfAddress={null} required={true} />
                                                     </div>
+                                                </article>
+                                                <article className="data-agreed">
+                                                    <div className="checkbox-area">
+                                                        <input
+                                                            className="agreed-checkbox"
+                                                            id="agreed-checkbox"
+                                                            name="agreed-checkbox"
+                                                            type="checkbox"
+                                                            hidden
+                                                        />
+                                                        <label className="agreed-checkbox-label" htmlFor="agreed-checkbox">
+                                                            Я согласен на обработку моих перс. данных в соответствии с <a className="privacy-policy-link" href="#" onClick={e => e.stopPropagation()}>Условиями</a>
+                                                        </label>
+                                                    </div>
+                                                    <button className="order-confirm-btn" id="order-confirm-btn" type="submit">Оформить заказ</button>
                                                 </article>
                                             </form>
                                         </section>

@@ -20,15 +20,16 @@
 
 .date-input-field {
     width: 250px;
-    height: 60px;
+    height: 56px;
     border: 1px solid #f18700;
     border-radius: 10px;
     padding: 0 15px;
     font-size: 17px;
-    cursor: default;
+    cursor: pointer;
 
   & + label {
     position: absolute;
+    pointer-events: none;
     top: 50%;
     transform: translateY(-50%);
     left: 20px;

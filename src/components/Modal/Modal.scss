@@ -269,8 +269,12 @@
       padding: 20px 30px 30px;
     }
 
+    & article:last-child {
+      padding-bottom: 20px;
+    }
+
     & article:not(:first-child) {
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .delivery-information {
@@ -371,7 +375,66 @@
   }
 
   .date-time-wrapper {
-    @include flexPos($vertical: flex-start, $direction: column);
+    @include flexPos();
     margin-top: 20px;
+
+    & > div {
+      width: 250px;
+    }
+
+    & > div:first-child {
+      margin-right: 15px;
+    }
+  }
+
+  .data-agreed {
+    @include flexPos(space-between, center);
+    color: #fff;
+
+    & .agreed-checkbox-label {
+      cursor: pointer;
+      position: relative;
+      padding-left: 34px;
+    }
+
+    & .agreed-checkbox-label:before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 1px solid #f18700;
+      border-radius: 5px;
+      transition: background .3s;
+    }
+
+    .agreed-checkbox:checked + .agreed-checkbox-label:before {
+      background: url('img/tick.svg') no-repeat center / 20px;
+    }
+
+    & a {
+      color: #f18700;
+    }
+
+    & a:hover {
+      text-decoration: underline;
+    }
+
+    & button {
+      color: #fff;
+      width: 209px;
+      height: 51px;
+      border-radius: 10px;
+      background-color: #f18700;
+      font-size: 16px;
+      transition: background-color .3s;
+    }
+
+    & button:hover {
+      background-color: #ad731d;
+    }
   }
 }
