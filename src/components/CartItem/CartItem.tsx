@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {amountChanger, deleteCartItem, fieldChecker} from "../../js/functions";
+import { amountChanger, deleteCartItem, fieldChecker } from "../../js/functions";
 import { StatesProps } from "../../props/Main/interfaces";
 
 export const CartItem = ({ myCart, setMyCart, itemParams, setModalClasses }: StatesProps) => {
@@ -13,7 +13,7 @@ export const CartItem = ({ myCart, setMyCart, itemParams, setModalClasses }: Sta
             </figure>
             <div className="description-wrapper">
                 <div>
-                    <h3>{itemParams.item_title}</h3>
+                    <h3 title={itemParams.item_title}>{itemParams.item_title}</h3>
                 </div>
                 <div>
                     <p>{itemParams.item_composition}</p>

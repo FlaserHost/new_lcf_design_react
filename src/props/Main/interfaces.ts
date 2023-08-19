@@ -8,6 +8,8 @@ export interface StatesProps {
     setModal?: any;
     setModalClasses?: any;
     itemParams?: any;
+    impulse?: any;
+    setImpulse?: any;
 }
 
 export interface GoodsProps extends StatesProps {

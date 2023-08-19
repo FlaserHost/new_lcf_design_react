@@ -1,0 +1,41 @@
+@media screen and (max-width: 769px) {
+  .page-header {
+    padding-right: 10px;
+    padding-left: 10px;
+
+    &__logo {
+      width: 50px;
+    }
+
+    &__content-wrapper p,
+    &__contacts > a {
+      font-size: 14px;
+    }
+
+    & .cart-btn {
+      width: 50px;
+      justify-content: center;
+      background: #f18700 url('../img/cart.svg') no-repeat center / 30px;
+
+      .btn-title {
+        display: none;
+      }
+
+      .items-amount {
+        margin-right: 0;
+        position: absolute;
+        left: 100%;
+        top: 100%;
+        transform: translate(-65%, -65%);
+      }
+    }
+
+    & .reg-or-auth {
+      width: 37px;
+
+      & span {
+        display: none;
+      }
+    }
+  }
+}

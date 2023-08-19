@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { StatesProps } from "../../props/Main/interfaces";
+import './styles/Header.scss';
+import './styles/adaptive.scss';
 // @ts-ignore
 import logo from './img/logo.png';
-import './Header.scss';
-import { StatesProps } from "../../props/Main/interfaces";
 
-export const Header = ({ cartSize, setModal }: StatesProps) => {
+export const Header = ({ cartSize, setModal, impulse, setImpulse }: StatesProps) => {
+    useEffect(() => {
+        if (impulse.length > 0) {
+            const timer = setTimeout(() => removeImpulse(), 900);
+            return () => clearTimeout(timer);
+        }
+    }, [impulse]);
+
+    const removeImpulse = () => setImpulse((prev: any) => prev.slice(1));
+
     return (
         <>
             <header className="page-header">
@@ -26,10 +36,13 @@ export const Header = ({ cartSize, setModal }: StatesProps) => {
                         <a href="tel:79954272121">+7 (995) 427-21-21</a>
                     </div>
                     <button className="cart-btn" id="cart-btn" type="button" onClick={() => setModal(true)}>
+                        {impulse.map((item: any) => item)}
                         <span className="btn-title">Корзина</span>
                         <span className="items-amount">{cartSize}</span>
                     </button>
-                    <button className="reg-or-auth">Войти</button>
+                    <button className="reg-or-auth">
+                        <span>Войти</span>
+                    </button>
                 </div>
             </header>
         </>

@@ -11,6 +11,7 @@ const App = () => {
     const [myCart, setMyCart] = useState(new Map());
     const [modal, setModal] = useState(false);
     const [modalClasses, setModalClasses] = useState(['modal-layer']);
+    const [impulse, setImpulse] = useState([]);
 
     useEffect(() => {
         if (localStorage.myCart) {
@@ -27,8 +28,8 @@ const App = () => {
   return (
      <HelmetProvider>
          {modal && <Modal classes={classes} myCart={myCart} setModal={setModal} setMyCart={setMyCart} setModalClasses={setModalClasses} />}
-         <Header cartSize={myCart.size} setModal={setModal} />
-         <Main myCart={myCart} setMyCart={setMyCart} setModalClasses={setModalClasses} />
+         <Header cartSize={myCart.size} setModal={setModal} impulse={impulse} setImpulse={setImpulse} />
+         <Main myCart={myCart} setMyCart={setMyCart} setModalClasses={setModalClasses} setImpulse={setImpulse} />
          <Footer />
      </HelmetProvider>
   );

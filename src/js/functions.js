@@ -4,7 +4,8 @@ const save = myCart => localStorage.myCart = JSON.stringify(Array.from(myCart.va
 export const modalBody = (cartSize, setModalClasses) => setModalClasses(['modal-layer', cartSize === 0 ? 'align-center' : 'align-start']);
 
 // добавление в корзину
-export const addToCart = (setAdded, myCart, setMyCart, good, setModalClasses) => {
+export const addToCart = (setAdded, myCart, setMyCart, good, setModalClasses, setImpulse) => {
+    setImpulse(prev => [...prev, <div className="impulse" />]);
     setAdded(prev => !prev);
     myCart.set(good.item_id, {...good, inCart: setAdded});
     save(myCart);

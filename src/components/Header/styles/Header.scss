@@ -1,4 +1,4 @@
-@import '../../scss/mixins.scss';
+@import '../../../scss/mixins';
 
 .page-header {
   width: 100%;
@@ -64,7 +64,7 @@
     right: calc(100% + 5px);
     width: 23px;
     height: 23px;
-    background: url('img/instagram.svg') no-repeat center / 23px;
+    background: url('../img/instagram.svg') no-repeat center / 23px;
   }
 
   &__contacts > a:last-child {
@@ -166,14 +166,14 @@
     width: 100px;
     height: 60px;
     font-size: 18px;
-    background: url('img/user.svg') no-repeat 25% / 35px;
+    background: url('../img/user.svg') no-repeat 25% / 35px;
     text-align: right;
     transition-duration: .4s;
     font-weight: 900;
   }
 
   .reg-or-auth:hover {
-    background-image: url('img/user-hovered.svg');
+    background-image: url('../img/user-hovered.svg');
     color: #fcfc54;
   }
 }

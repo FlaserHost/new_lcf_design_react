@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { addToCart } from "../../js/functions";
 import { StatesProps } from "../../props/Main/interfaces";
 
-export const Goods = ({ myCart, setMyCart, good, index, setModalClasses }: StatesProps) => {
+export const Goods = ({ myCart, setMyCart, good, index, setModalClasses, setImpulse }: StatesProps) => {
     const [added, setAdded] = useState(false);
-    const dataToSend = [setAdded, myCart, setMyCart, good, setModalClasses];
+    const dataToSend = [setAdded, myCart, setMyCart, good, setModalClasses, setImpulse];
 
     useEffect(() => {
         if (myCart.size > 0) {
