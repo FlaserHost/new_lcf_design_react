@@ -1,0 +1,12 @@
+@media screen and (max-width: 769px) {
+  .main-content {
+    & .goods-categories a {
+      font-size: 14px;
+    }
+
+    &__categories {
+      min-height: 45px;
+      top: 81px;
+    }
+  }
+}

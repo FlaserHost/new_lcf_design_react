@@ -1,11 +1,15 @@
-@import '../../scss/mixins.scss';
+@import '../../../scss/mixins';
 
 .main-content {
   &__categories {
     width: 100%;
-    min-height: 80px;
+    min-height: 60px;
     background-color: #616161;
     @include flexPos($vertical: center);
+    position: sticky;
+    top: 119px;
+    z-index: 3;
+    border-top: 1px solid #f18700;
   }
 
   &__categories > nav,
@@ -21,6 +25,10 @@
 
   .goods-categories {
     @include flexPos(space-evenly, $wrap: wrap);
+  }
+
+  .goods-categories li:not(:last-child) {
+    margin-right: 10px;
   }
 
   .goods-categories a {

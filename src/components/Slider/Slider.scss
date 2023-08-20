@@ -1,19 +1,28 @@
 .main-content__slider {
   width: 100%;
-  height: 474px;
-}
 
-swiper-container,
-swiper-slide {
-  width: 100%;
-  height: 100%;
-}
+  swiper-container,
+  swiper-slide {
+    width: 100%;
+    height: 100%;
+  }
 
-swiper-container::part(bullet-active) {
-  background-color: #f18700;
-}
+  swiper-slide {
+    display: flex;
+  }
 
-swiper-container::part(button-prev),
-swiper-container::part(button-next) {
-  color: #f18700;
+  swiper-container::part(bullet-active) {
+    background-color: #f18700;
+  }
+
+  swiper-container::part(button-prev),
+  swiper-container::part(button-next) {
+    color: #f18700;
+  }
+
+  img {
+    height: auto;
+    max-height: 474px;
+    object-position: top center;
+  }
 }

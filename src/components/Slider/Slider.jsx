@@ -12,7 +12,9 @@ export const Slider = () => {
                 pagination="true"
                 loop="true"
             >
-                {slides.map((item, index) => <swiper-slide style={{background: `url('${item}') no-repeat top / cover`}} key={index}></swiper-slide>)}
+                {slides.map((item, index) => <swiper-slide key={index}>
+                    <img src={item} alt={`slide-${index}`} />
+                </swiper-slide>)}
             </swiper-container>
         </section>
     );

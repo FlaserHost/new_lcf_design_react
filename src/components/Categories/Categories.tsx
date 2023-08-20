@@ -1,7 +1,8 @@
 import React from 'react';
-import './Categories.scss';
 import { GoodsProps } from "../../props/Main/interfaces";
 import { goToAnchor } from "../../js/functions";
+import './styles/Categories.scss';
+import './styles/adaptive.scss';
 
 export const Categories = ({ goods, anchors }: GoodsProps) => {
     return (

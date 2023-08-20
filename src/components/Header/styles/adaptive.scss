@@ -12,6 +12,12 @@
       font-size: 14px;
     }
 
+    &__contacts > a:nth-of-type(1):before {
+      width: 18px;
+      height: 18px;
+      background-size: 18px;
+    }
+
     & .cart-btn {
       width: 50px;
       justify-content: center;
@@ -28,14 +34,27 @@
         top: 100%;
         transform: translate(-65%, -65%);
       }
+
+      .impulse {
+        left: 2.3px;
+      }
     }
 
     & .reg-or-auth {
       width: 37px;
+      transform: translateX(-6px);
 
       & span {
         display: none;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 631px) {
+  .page-header {
+    &__content-wrapper p {
+      display: none;
     }
   }
 }

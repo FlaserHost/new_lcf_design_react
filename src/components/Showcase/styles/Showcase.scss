@@ -1,8 +1,12 @@
-@import '../../scss/mixins.scss';
+@import '../../../scss/mixins';
 
 .main-content {
   &__main-goods {
     width: 100%;
+    position: relative;
+  }
+
+  & .showcase-wrapper {
     padding: 0 20px 20px;
   }
 
