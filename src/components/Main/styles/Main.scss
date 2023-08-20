@@ -3,4 +3,8 @@
   min-height: 100vh;
   margin-top: 119px;
   background-color: #eee;
+
+  & .sticky-ride-track {
+    position: relative;
+  }
 }

@@ -42,7 +42,6 @@
 
     & .reg-or-auth {
       width: 37px;
-      transform: translateX(-6px);
 
       & span {
         display: none;
@@ -55,6 +54,17 @@
   .page-header {
     &__content-wrapper p {
       display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .page-header {
+    &__contacts > a:nth-of-type(1):before {
+      width: 16px;
+      height: 16px;
+      background-size: 16px;
+      right: calc(100% + 1px);
     }
   }
 }

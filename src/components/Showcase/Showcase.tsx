@@ -1,8 +1,8 @@
 import React from "react";
 import { GoodsProps } from "../../props/Main/interfaces";
-import { Categories } from "../Categories/Categories";
 import { Goods } from "../Goods/Goods";
 import './styles/Showcase.scss';
+import './styles/Showcase_adaptive.scss';
 
 export const Showcase = ({ goods, anchors, myCart, setMyCart, setModalClasses, setImpulse }: GoodsProps) => {
     const goodsGroups = Object.values(goods).map((item, index) => {
@@ -23,8 +23,5 @@ export const Showcase = ({ goods, anchors, myCart, setMyCart, setModalClasses, s
         </div>);
     });
 
-    return (<section className="main-content__main-goods">
-        <Categories goods={goods} anchors={anchors} />
-        <div className="showcase-wrapper">{goodsGroups}</div>
-    </section>);
+    return <section className="main-content__main-goods">{goodsGroups}</section>;
 }

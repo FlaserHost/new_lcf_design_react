@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { StatesProps } from "../../props/Main/interfaces";
 import './styles/Header.scss';
-import './styles/adaptive.scss';
+import './styles/Header_adaptive.scss';
 // @ts-ignore
 import logo from './img/logo.png';
 

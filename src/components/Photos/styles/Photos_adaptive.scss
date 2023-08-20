@@ -1,0 +1,23 @@
+@media screen and (max-width: 769px) {
+  .main-content {
+    & .photos-wrapper {
+      grid: repeat(2, 300px) / repeat(auto-fill, minmax(369px, 1fr));
+    }
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .main-content {
+    & .photos-wrapper {
+      grid: repeat(2, 300px) / repeat(auto-fill, minmax(355px, 1fr));
+    }
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .main-content {
+    & .photos-wrapper {
+      grid: repeat(2, 300px) / repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }
+}

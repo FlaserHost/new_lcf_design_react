@@ -1,8 +1,9 @@
 import React from "react";
 import { links } from "./Links";
+import './styles/Footer.scss';
+import './styles/Footer_adaptive.scss';
 // @ts-ignore
 import logo from './logo_footer.png';
-import './Footer.scss';
 
 export const Footer = () => {
     const date = new Date();
@@ -27,7 +28,7 @@ export const Footer = () => {
                     </a>)}
                 </div>
                 <div className="copyright">
-                    <strong>&copy; 2021 - {currentYear} Light Cost Family</strong>
+                    <strong>&copy; 2021 - {currentYear} <br className="page-footer__word-wrap" /> Light Cost Family</strong>
                 </div>
             </article>
             <article className="footer-section logo-section">

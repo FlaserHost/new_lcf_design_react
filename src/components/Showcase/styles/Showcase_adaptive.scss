@@ -1,0 +1,35 @@
+@media screen and (max-width: 769px) {
+  .main-content {
+    & .group-wrapper > h2 {
+      font-size: 42px;
+    }
+
+    & .group-wrapper > h2:after {
+      width: 232px;
+    }
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .main-content {
+    & .group-wrapper > h2 {
+      font-size: 33px;
+    }
+
+    & .group-wrapper > h2:after {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .main-content {
+    & .goods-container {
+      grid: 1fr / repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    & .good-title {
+      max-width: 162px;
+    }
+  }
+}

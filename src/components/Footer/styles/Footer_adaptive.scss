@@ -1,0 +1,21 @@
+@media screen and (max-width: 426px) {
+  .page-footer {
+    & > .footer-section {
+      line-height: 20px;
+    }
+
+    & * {
+      color: #fff;
+      font-size: 10px;
+    }
+
+    & .social-links > a {
+      width: 30px;
+      height: 30px;
+    }
+
+    &__word-wrap {
+      display: block;
+    }
+  }
+}

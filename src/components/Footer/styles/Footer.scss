@@ -1,4 +1,4 @@
-@import '../../scss/mixins.scss';
+@import '../../../scss/mixins';
 
 .page-footer {
   width: 100%;
@@ -56,5 +56,9 @@
       width: 59px;
       height: 90px;
     }
+  }
+
+  &__word-wrap {
+    display: none;
   }
 }

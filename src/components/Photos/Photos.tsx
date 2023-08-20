@@ -1,6 +1,7 @@
 import React from "react";
 import { photosPaths } from "./PhotosPaths";
-import './Photos.scss';
+import './styles/Photos.scss';
+import './styles/Photos_adaptive.scss';
 
 export const Photos = () => {
     return (
