@@ -37,9 +37,10 @@
     font-weight: 900;
     text-transform: uppercase;
     transition: color .4s;
-  }
 
-  .goods-categories a:hover {
-    color: #fcfc54;
+    &:hover,
+    &.active {
+      color: #fcfc54;
+    }
   }
 }

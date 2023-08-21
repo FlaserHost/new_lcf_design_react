@@ -10,6 +10,8 @@ export interface StatesProps {
     itemParams?: any;
     impulse?: any;
     setImpulse?: any;
+    refs?: any;
+    setRefs?: any;
 }
 
 export interface GoodsProps extends StatesProps {
