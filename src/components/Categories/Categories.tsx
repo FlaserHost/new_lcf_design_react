@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { GoodsProps } from "../../props/Main/interfaces";
 import { goToAnchor } from "../../js/functions";
+import classNames from "classnames";
 import './styles/Categories.scss';
 import './styles/Category_adaptive.scss';
 
@@ -40,9 +41,11 @@ export const Categories = ({ goods, anchors, refs }: GoodsProps) => {
         const linkRef = React.createRef<HTMLAnchorElement>();
         linksRefs.push(linkRef);
 
+        const linkClasses = classNames('category-link', index === 0 && 'active');
+
         return (<li className={`category-menu-${good.category_id}`} key={good.category_id}>
             <a
-                className="category-link"
+                className={linkClasses}
                 href={`#${anchors[index]}`}
                 ref={linkRef}
                 onClick={e => goToAnchor(e, anchors[index])}

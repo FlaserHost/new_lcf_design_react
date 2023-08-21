@@ -22,10 +22,22 @@
   }
 }
 
+@media screen and (max-width: 376px) {
+  .main-content {
+    & .group-wrapper > h2 {
+      font-size: 31px;
+    }
+  }
+}
+
 @media screen and (max-width: 321px) {
   .main-content {
     & .goods-container {
       grid: 1fr / repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    & .group-wrapper > h2 {
+      font-size: 25px;
     }
 
     & .good-title {
