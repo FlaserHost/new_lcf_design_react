@@ -9,11 +9,14 @@ export const Categories = ({ goods, anchors }: GoodsProps) => {
         <section className="main-content__categories">
             <nav>
                 <ul className="goods-categories">
-                    {Object.values(goods).map((good: any, index) => <li
-                        className={`category-menu-${good.category_id}`}
-                        key={good.category_id}
-                    >
-                        <a className="category-link" href={`#${anchors[index]}`} onClick={e => goToAnchor(e, anchors[index])}>{good.category}</a>
+                    {Object.values(goods).map((good: any, index) => <li className={`category-menu-${good.category_id}`} key={good.category_id}>
+                        <a
+                            className="category-link"
+                            href={`#${anchors[index]}`}
+                            onClick={e => goToAnchor(e, anchors[index])}
+                        >
+                            {good.category}
+                        </a>
                     </li>)}
                 </ul>
             </nav>
