@@ -1,3 +1,22 @@
+@media screen and (max-width: 1025px) {
+  .page-header {
+    &__logo {
+      width: 71px;
+    }
+
+    &__content-wrapper p,
+    &__contacts > a {
+      font-size: 16px;
+    }
+
+    &__contacts > a:nth-of-type(1):before {
+      width: 19px;
+      height: 19px;
+      background-size: 19px;
+    }
+  }
+}
+
 @media screen and (max-width: 769px) {
   .page-header {
     padding-right: 10px;

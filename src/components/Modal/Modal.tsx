@@ -10,7 +10,8 @@ import { List } from "../DropDownList/List";
 import { cities } from "../DropDownList/Lists";
 import { districts } from "../DropDownList/Lists";
 import { times } from "../DropDownList/Lists";
-import './Modal.scss';
+import './styles/Modal.scss';
+import './styles/Modal_adaptive.scss';
 // @ts-ignore
 import empty from './img/empty-cart.svg';
 

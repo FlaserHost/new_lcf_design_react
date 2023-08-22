@@ -1,4 +1,4 @@
-@import '../../scss/mixins.scss';
+@import '../../../scss/mixins';
 
 .modal-layer {
   position: fixed;
@@ -97,7 +97,7 @@
   .close-cross {
     width: 15px;
     height: 18px;
-    background: url('../../../public/img/modal/close-cross.svg') no-repeat center / 15px 18px;
+    background: url('../../../../public/img/modal/close-cross.svg') no-repeat center / 15px 18px;
   }
 
   .cart-title {
@@ -200,11 +200,11 @@
         $hovered: nth(map-get($hovers, $index), 2);
 
         .#{$index} {
-          background: url('../../../public/img/modal/#{$standart}') no-repeat center / 30px;
+          background: url('../../../../public/img/modal/#{$standart}') no-repeat center / 30px;
         }
 
         .#{$index}:hover {
-          background-image: url('../../../public/img/modal/#{$hovered}');
+          background-image: url('../../../../public/img/modal/#{$hovered}');
         }
       };
 
@@ -416,7 +416,7 @@
     }
 
     .agreed-checkbox:checked + .agreed-checkbox-label:before {
-      background: url('img/tick.svg') no-repeat center / 20px;
+      background: url('../img/tick.svg') no-repeat center / 20px;
     }
 
     & a {

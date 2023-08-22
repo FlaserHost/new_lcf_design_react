@@ -1,3 +1,11 @@
+@media screen and (max-width: 1025px) {
+  .main-content {
+    & .group-wrapper > h2:after {
+      width: 332px;
+    }
+  }
+}
+
 @media screen and (max-width: 769px) {
   .main-content {
     & .group-wrapper > h2 {

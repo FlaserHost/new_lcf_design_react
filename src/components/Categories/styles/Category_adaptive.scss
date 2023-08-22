@@ -1,7 +1,23 @@
+@media screen and (max-width: 1025px) {
+  .main-content {
+    &__categories {
+      top: 106px;
+    }
+  }
+}
+
 @media screen and (max-width: 769px) {
   .main-content {
     & .goods-categories a {
       font-size: 14px;
+
+      &:not(.active):hover {
+        color: #fff;
+      }
+
+      &:active {
+        color: #fcfc54;
+      }
     }
 
     &__categories {

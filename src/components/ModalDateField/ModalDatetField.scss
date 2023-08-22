@@ -47,6 +47,7 @@
   background-color: #fff;
   position: absolute;
   top: calc(100% + 10px);
+  z-index: 4;
 
   .rdp-day_today {
     color: #f18700;

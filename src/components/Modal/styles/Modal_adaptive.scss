@@ -1,0 +1,115 @@
+@media screen and (max-width: 1025px) {
+  .field-area {
+    .modal-field {
+      width: 268px;
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .modal-layer {
+    &.align-start {
+      padding: 0;
+    }
+
+    & .cart-items .cart-item {
+      & .description-wrapper h3 {
+        font-size: 18px;
+      }
+
+      & .item-price {
+        white-space: nowrap;
+      }
+    }
+
+    & .contact-fields {
+      & > .contact-field-area:last-child {
+        flex-grow: 1;
+
+        & > input {
+          width: 100%;
+        }
+      }
+    }
+
+    & .data-agreed .agreed-checkbox-label {
+      font-size: 13px;
+    }
+
+    & .data-agreed button {
+      width: 194px;
+    }
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .modal-layer {
+    & .modal-body {
+      border-radius: 0;
+      padding: 15px;
+    }
+
+    & .cart-title {
+      font-size: 27px;
+
+      & > .cart-items-amount {
+        font-size: 16px;
+      }
+    }
+
+    & .cart-items {
+      & .cart-item {
+        flex-wrap: wrap;
+        padding: 15px 0;
+
+        & figure {
+          max-width: 100px;
+        }
+
+        & .description-wrapper {
+          padding: 0;
+          width: 233px;
+          text-align: center;
+          flex-grow: 1;
+
+          & h3 {
+            padding: 0 11px;
+          }
+
+          & > div:last-child {
+            padding: 0 12px;
+          }
+        }
+
+        & .controls-block,
+        & .cart-item-delete {
+          margin: 15px 0 0;
+        }
+
+        & .item-price {
+          margin-top: 15px;
+        }
+
+        & .cart-item-delete {
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    & .client-data {
+      & h2 {
+        font-size: 30px;
+      }
+
+      & .contact-information .contact-fields {
+        & > div {
+          flex-grow: 1;
+
+          & > input {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
