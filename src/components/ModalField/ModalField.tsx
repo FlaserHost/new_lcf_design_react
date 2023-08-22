@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { ModalFieldsProps } from "../../props/Main/interfaces";
-import './ModalField.scss';
+import './styles/ModalField.scss';
+import './styles/ModalField_adaptive.css';
 import classNames from "classnames";
 
 export const ModalField = (props: ModalFieldsProps) => {
