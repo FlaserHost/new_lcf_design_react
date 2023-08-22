@@ -18,11 +18,10 @@
   }
 }
 
-@mixin coordinates ($top: 0, $right: 0, $bottom: 0, $left: 0) {
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
-}
-
 $maxWidth: 1750px;
+
+$hovers: (
+        minus: ('minus.svg', 'minus_hovered.svg'),
+        plus: ('plus.svg', 'plus_hovered.svg'),
+        trash: ('trash.svg', 'trash_hovered.svg'),
+);

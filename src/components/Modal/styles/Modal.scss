@@ -2,7 +2,10 @@
 
 .modal-layer {
   position: fixed;
-  @include coordinates();
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   padding: 40px;
   @include flexPos(center);
   background-color: rgba(0, 0, 0, .5);
@@ -189,12 +192,7 @@
         transition: background-image .4s;
       }
 
-      $hovers: (
-        minus: ('minus.svg', 'minus_hovered.svg'),
-        plus: ('plus.svg', 'plus_hovered.svg'),
-        trash: ('trash.svg', 'trash_hovered.svg'),
-      );
-
+      // Массив $hovers базируется в файле mixins.scss
       @each $index, $value in $hovers {
         $standart: nth(map-get($hovers, $index), 1);
         $hovered: nth(map-get($hovers, $index), 2);
@@ -217,9 +215,7 @@
       }
 
       .cart-item-delete {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexPos(center, center);
         flex-grow: 1;
         margin-left: 30px;
       }

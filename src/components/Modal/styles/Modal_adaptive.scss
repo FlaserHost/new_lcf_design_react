@@ -1,3 +1,5 @@
+@import '../../../scss/mixins.scss';
+
 @media screen and (max-width: 1025px) {
   .field-area {
     .modal-field {
@@ -32,12 +34,14 @@
       }
     }
 
-    & .data-agreed .agreed-checkbox-label {
-      font-size: 13px;
-    }
+    & .data-agreed  {
+      & .agreed-checkbox-label {
+        font-size: 13px;
+      }
 
-    & .data-agreed button {
-      width: 194px;
+      & button {
+        width: 194px;
+      }
     }
   }
 }
@@ -81,6 +85,22 @@
           }
         }
 
+        & .controls-block {
+          // Массив $hovers базируется в файле mixins.scss
+          @each $index, $value in $hovers {
+            $standart: nth(map-get($hovers, $index), 1);
+            $hovered: nth(map-get($hovers, $index), 2);
+
+            .#{$index}:hover {
+              background-image: url('../../../../public/img/modal/#{$standart}');
+            }
+
+            .#{$index}:active {
+              background-image: url('../../../../public/img/modal/#{$hovered}');
+            }
+          };
+        }
+
         & .controls-block,
         & .cart-item-delete {
           margin: 15px 0 0;
@@ -101,14 +121,51 @@
         font-size: 30px;
       }
 
-      & .contact-information .contact-fields {
-        & > div {
-          flex-grow: 1;
+      & .contact-information {
+        & .contact-fields {
+          & > div {
+            flex-grow: 1;
 
-          & > input {
-            width: 100%;
+            & > input {
+              width: 100%;
+            }
           }
         }
+      }
+    }
+
+    & .date-time-wrapper {
+      flex-direction: column;
+
+      & > div,
+      .date-input-field {
+        width: 100%;
+      }
+
+      & > div:last-child {
+        margin-top: 15px;
+      }
+    }
+
+    & .calendar {
+      top: initial;
+      bottom: 100%;
+    }
+
+    & .data-agreed {
+      @include flexPos($direction: column-reverse);
+
+      & .checkbox-area {
+        display: flex;
+        margin-top: 15px;
+      }
+
+      & button {
+        width: 334px;
+      }
+
+      & .agreed-checkbox-label {
+        font-size: 15px;
       }
     }
   }

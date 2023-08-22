@@ -21,7 +21,7 @@ export const CartItem = ({ myCart, setMyCart, itemParams, setModalClasses }: Sta
             </div>
             <div className="controls-block">
                 <button className="amount-changer-btn minus" type="button" onClick={() => amountChanger('-', ...forAmountChanger)}></button>
-                <input className="amount-changer-field" id="amount-changer-field" type="number" value={newParams.amount} onBlur={e => fieldChecker('input', ...forAmountChanger, e.target.value)} onChange={e => amountChanger('input', ...forAmountChanger, e.target.value)} />
+                <input className="amount-changer-field" type="number" value={newParams.amount} onBlur={e => fieldChecker('input', ...forAmountChanger, e.target.value)} onChange={e => amountChanger('input', ...forAmountChanger, e.target.value)} />
                 <button className="amount-changer-btn plus" type="button" onClick={() => amountChanger('+', ...forAmountChanger)}></button>
             </div>
             <div className="item-price">
