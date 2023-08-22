@@ -52,6 +52,8 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
         house: '27'
     }
 
+    const flatLabel = window.innerWidth > 426 ? '№ квартиры/офиса' : '№ кв/оф';
+
     return (
         <>
             <Helmet>
@@ -124,7 +126,7 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
                                                             <ModalField areaType="address" label="№ дома" id="house-field" type="text" selfAddress={(selfAddress && selfAddress.house) ? selfAddress.house : ''} required={true} />
                                                             <ModalField areaType="address" label="Подъезд" id="entrance-field" type="number" />
                                                             <ModalField areaType="address" label="Этаж" id="floor-field" type="number" />
-                                                            <ModalField areaType="address" label="№ квартиры/офиса" id="flat-field" type="number" />
+                                                            <ModalField areaType="address" label={flatLabel} id="flat-field" type="number" />
                                                             <ModalField areaType="address" label="Комментарий" id="comment-field" type="textarea" />
                                                         </div>
                                                     </div>
