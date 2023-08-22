@@ -3,9 +3,10 @@ import { ModalFieldsProps } from "../../props/Main/interfaces";
 import { DayPicker } from 'react-day-picker';
 import { format } from 'date-fns';
 import { ru } from 'date-fns/locale';
-import 'react-day-picker/dist/style.css';
-import './ModalDatetField.scss';
 import classNames from "classnames";
+import 'react-day-picker/dist/style.css';
+import './styles/ModalDatetField.scss';
+import './styles/ModalDateField_adaptive.scss';
 
 export const ModalDateField = (props: ModalFieldsProps) => {
     const [calendar, setCalendar] = useState(false);

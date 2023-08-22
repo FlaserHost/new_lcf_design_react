@@ -170,3 +170,31 @@
     }
   }
 }
+
+@media screen and (max-width: 376px) {
+  .modal-layer {
+    & .cart-title {
+      & > .cart-items-amount {
+        font-size: 14px;
+      }
+    }
+
+    & .cart-items {
+      & .cart-item {
+        & .description-wrapper {
+          & h3 {
+            font-size: 15px;
+          }
+
+          & > div:last-child {
+            margin-top: 10px;
+          }
+
+          & p {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}

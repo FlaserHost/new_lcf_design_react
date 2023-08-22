@@ -95,6 +95,9 @@ export const List = (props: ModalFieldsProps) => {
                 content: props.required ? '"*"' : '""',
                 color: '#f18700',
             },
+            '@media screen and (max-width: 376px)': {
+                fontSize: '13px',
+            },
         }),
         input: (defaultStyles: any) => ({
             ...defaultStyles,
