@@ -52,7 +52,9 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
         house: '27'
     }
 
-    const flatLabel = window.innerWidth > 426 ? '№ квартиры/офиса' : '№ кв/оф';
+    const houseNumber = window.innerWidth > 376 ? '№ дома' : 'Дом';
+    const entrance = window.innerWidth > 321 ? 'Подъезд' : 'Под.';
+    const flatLabel = window.innerWidth > 426 ? '№ квартиры/офиса' : 'Кв/оф.';
 
     return (
         <>
@@ -123,8 +125,8 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
                                                             <List label="Укажите город" id="city-field" list={cities} selfAddress={(selfAddress && selfAddress.city) ? selfAddress.city : selfAddress} required={true} />
                                                             <List label="Укажите район" id="district-field" list={districts} selfAddress={(selfAddress && selfAddress.district) ? selfAddress.district : selfAddress} required={true} />
                                                             <ModalField areaType="address" label="Укажите улицу" id="street-field" type="text" selfAddress={(selfAddress && selfAddress.street) ? selfAddress.street : ''}  required={true} />
-                                                            <ModalField areaType="address" label="№ дома" id="house-field" type="text" selfAddress={(selfAddress && selfAddress.house) ? selfAddress.house : ''} required={true} />
-                                                            <ModalField areaType="address" label="Подъезд" id="entrance-field" type="number" />
+                                                            <ModalField areaType="address" label={houseNumber} id="house-field" type="text" selfAddress={(selfAddress && selfAddress.house) ? selfAddress.house : ''} required={true} />
+                                                            <ModalField areaType="address" label={entrance} id="entrance-field" type="number" />
                                                             <ModalField areaType="address" label="Этаж" id="floor-field" type="number" />
                                                             <ModalField areaType="address" label={flatLabel} id="flat-field" type="number" />
                                                             <ModalField areaType="address" label="Комментарий" id="comment-field" type="textarea" />

@@ -149,6 +149,7 @@
 
     & .calendar {
       top: initial;
+      left: -8px;
       bottom: 100%;
     }
 
@@ -202,11 +203,35 @@
         width: 283px;
       }
     }
+
+    & .calendar {
+      left: -33px;
+    }
   }
 }
 
 @media screen and (max-width: 321px) {
   .modal-layer {
+    overflow-x: hidden;
+
+    & .cart-title {
+      font-size: 23px;
+
+      & > .cart-items-amount {
+        font-size: 12px;
+      }
+    }
+
+    & .client-data {
+      & h2 {
+        font-size: 25px;
+      }
+
+      h3 {
+        font-size: 19px;
+      }
+    }
+
     & .cart-items {
       & .cart-item {
         & .description-wrapper {
@@ -223,6 +248,10 @@
       & button {
         width: 234px;
       }
+    }
+
+    & .calendar {
+      left: -60px;
     }
   }
 }

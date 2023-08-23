@@ -1,11 +1,6 @@
 @media screen and (max-width: 426px) {
     .field-area label {
         padding: 0 9px;
-    }
-}
-
-@media screen and (max-width: 376px) {
-    .field-area label {
         font-size: 13px;
     }
 }
