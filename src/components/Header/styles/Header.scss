@@ -166,10 +166,17 @@
     text-align: right;
     transition-duration: .4s;
     font-weight: 900;
+
+    & > span {
+      transition-duration: .4s;
+    }
   }
 
   .reg-or-auth:hover {
     background-image: url('../img/user-hovered.svg');
-    color: #fcfc54;
+
+    & > span {
+      color: #fcfc54;
+    }
   }
 }
