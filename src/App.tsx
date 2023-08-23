@@ -6,6 +6,8 @@ import { Modal } from "./components/Modal/Modal";
 import { modalBody } from "./js/functions";
 import { HelmetProvider } from "react-helmet-async";
 import classNames from "classnames";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const App = () => {
     const [myCart, setMyCart] = useState(new Map());
@@ -21,6 +23,8 @@ const App = () => {
         }
 
         modalBody(myCart.size, setModalClasses);
+
+        AOS.init();
     }, []);
 
     const classes = classNames(...modalClasses);

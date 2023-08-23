@@ -14,16 +14,24 @@ export const Showcase = ({ goods, anchors, myCart, setMyCart, setModalClasses, s
         setRefs(preparedRefs);
     }, [flag])
 
+    let aosDelay = 50;
     const goodsGroups = Object.values(goods).map((item, index) => {
-        const group = item.items.map((good: any) => <Goods
-            good={good}
-            index={index}
-            myCart={myCart}
-            setMyCart={setMyCart}
-            setModalClasses={setModalClasses}
-            setImpulse={setImpulse}
-            key={good.item_id}
-        />);
+        const group = item.items.map((good: any) => {
+            aosDelay += 50;
+
+            return <Goods
+                 good={good}
+                 index={index}
+                 myCart={myCart}
+                 setMyCart={setMyCart}
+                 setModalClasses={setModalClasses}
+                 setImpulse={setImpulse}
+                 aosDelay={aosDelay}
+                 key={good.item_id}
+            />
+        });
+
+        aosDelay = 50;
 
         const groupRef = React.createRef<HTMLDivElement>();
         groupRefs.push(groupRef);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { addToCart } from "../../js/functions";
 import { StatesProps } from "../../props/Main/interfaces";
 
-export const Goods = ({ myCart, setMyCart, good, index, setModalClasses, setImpulse }: StatesProps) => {
+export const Goods = ({ myCart, setMyCart, good, index, setModalClasses, setImpulse, aosDelay }: StatesProps) => {
     const [added, setAdded] = useState(false);
     const dataToSend = [setAdded, myCart, setMyCart, good, setModalClasses, setImpulse];
 
@@ -21,7 +21,7 @@ export const Goods = ({ myCart, setMyCart, good, index, setModalClasses, setImpu
     }, [good.item_id]);
 
     return (
-        <article className="good" id={`good-${good.item_id}`} data-good-id={good.item_id}>
+        <article className="good" id={`good-${good.item_id}`} data-aos="fade-up" data-aos-once="true" data-aos-duration="400" data-aos-delay={aosDelay} data-aos-easing="ease-in-out" data-good-id={good.item_id}>
             <figure className="good__good-img">
                 <img src={good.item_img} alt={good.item_title} />
             </figure>
