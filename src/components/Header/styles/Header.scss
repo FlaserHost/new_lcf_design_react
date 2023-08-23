@@ -84,9 +84,7 @@
     height: 52px;
     background-color: #f18700;
     border-radius: 7px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexPos(space-between, center);
     padding: 0 10px;
     font-size: 17px;
     transition-duration: .4s;
@@ -116,9 +114,7 @@
   }
 
   .cart-btn > .items-amount {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexPos(center, center);
     width: 23px;
     height: 23px;
     border-radius: 50%;
