@@ -196,5 +196,33 @@
         }
       }
     }
+
+    & .data-agreed {
+      & button {
+        width: 283px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .modal-layer {
+    & .cart-items {
+      & .cart-item {
+        & .description-wrapper {
+          width: 181px;
+        }
+
+        & .item-price {
+          margin-left: 17px;
+        }
+      }
+    }
+
+    & .data-agreed {
+      & button {
+        width: 234px;
+      }
+    }
   }
 }
