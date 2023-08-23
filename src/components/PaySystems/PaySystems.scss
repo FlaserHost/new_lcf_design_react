@@ -24,10 +24,31 @@
 
   .pay-systems {
     margin-top: 50px;
-    width: 70%;
+    width: 90%;
+    max-width: 504px;
   }
 
   .wrapped-platform {
     @include flexPos($vertical: center, $direction: column);
+  }
+
+  .rules {
+    margin-top: 20px;
+
+    & .rule {
+      & strong {
+        font-weight: 400;
+      }
+
+      & > * {
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+
+    & .rule:not(:first-child) {
+      margin-top: 20px;
+    }
   }
 }

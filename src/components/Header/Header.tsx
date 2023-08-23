@@ -40,7 +40,7 @@ export const Header = ({ cartSize, setModal, impulse, setImpulse }: StatesProps)
                         <span className="btn-title">Корзина</span>
                         <span className="items-amount">{cartSize}</span>
                     </button>
-                    <button className="reg-or-auth">
+                    <button className="reg-or-auth" type="button">
                         <span>Войти</span>
                     </button>
                 </div>
