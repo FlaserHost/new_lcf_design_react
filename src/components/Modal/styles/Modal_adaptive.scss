@@ -49,8 +49,11 @@
 @media screen and (max-width: 426px) {
   .modal-layer {
     & .modal-body {
-      border-radius: 0;
       padding: 15px;
+    }
+
+    & .modal-body:not(.cart-is-empty) {
+      border-radius: 0;
     }
 
     & .cart-title {
