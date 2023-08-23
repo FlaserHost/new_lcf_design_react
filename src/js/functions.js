@@ -25,6 +25,8 @@ export const goToAnchor = (e, anchor) => {
 
     if (window.innerWidth < 321) {
         addition = 90;
+    } else if (window.innerWidth < 366) {
+        addition = 104;
     } else if (window.innerWidth < 376) {
         addition = 130;
     } else if (window.innerWidth < 426) {

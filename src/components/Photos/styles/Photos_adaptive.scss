@@ -14,6 +14,15 @@
   }
 }
 
+
+@media screen and (max-width: 360px) {
+  .main-content {
+    & .photos-wrapper {
+      grid: repeat(2, 300px) / repeat(auto-fill, minmax(335px, 1fr));
+    }
+  }
+}
+
 @media screen and (max-width: 321px) {
   .main-content {
     & .photos-wrapper {
