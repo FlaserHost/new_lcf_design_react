@@ -6,19 +6,12 @@ import classNames from "classnames";
 export const List = (props: ModalFieldsProps) => {
     const [selected, setSelected] = useState(null);
 
-    const obj = props.list.map((item: any) => {
-        return {
-            value: item[0],
-            label: item[1]
-        };
-    });
-
     const property = props.label.split(' ')[1];
     let emptyNotice = property !== 'время' ? property : 'времени';
     const firstLetter = emptyNotice.split('')[0].toUpperCase();
     emptyNotice = firstLetter + emptyNotice.substring(1);
 
-    const options = [...obj];
+    const options = [...props.list];
     const handleChange = (value: any) => setSelected(value);
     const customNoOptionsMessage = ({ inputValue }: any) => `${emptyNotice} ${inputValue} не существует`;
     const selectClasses = classNames('react-select-container', props.id);
