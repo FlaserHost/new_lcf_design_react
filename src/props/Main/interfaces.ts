@@ -12,7 +12,6 @@ export interface StatesProps {
     setImpulse?: any;
     refs?: any;
     setRefs?: any;
-
     aosDelay?: number;
 }
 
