@@ -21,23 +21,18 @@ export const goToAnchor = (e, anchor) => {
     const toAnchor = document.getElementById(anchor);
     const elementPosition = toAnchor.offsetTop;
 
-    let addition;
+    const breakpoints = [
+        { width: 321, addition: 90 },
+        { width: 366, addition: 104 },
+        { width: 376, addition: 130 },
+        { width: 413, addition: 128 },
+        { width: 426, addition: 135 },
+        { width: 769, addition: 293 },
+        { width: Infinity, addition: 415 }
+    ];
 
-    if (window.innerWidth < 321) {
-        addition = 90;
-    } else if (window.innerWidth < 366) {
-        addition = 104;
-    } else if (window.innerWidth < 376) {
-        addition = 130;
-    } else if (window.innerWidth < 413) {
-        addition = 128;
-    } else if (window.innerWidth < 426) {
-        addition = 135;
-    } else if (window.innerWidth < 769) {
-        addition = 313;
-    } else {
-        addition = 415
-    }
+    const matchingBreakpoint = breakpoints.find(breakpoint => window.innerWidth < breakpoint.width);
+    const addition = matchingBreakpoint ? matchingBreakpoint.addition : 415;
 
     html.scroll({top: elementPosition + addition, behavior: 'smooth'});
 }
