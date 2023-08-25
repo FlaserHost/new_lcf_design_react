@@ -52,9 +52,10 @@ export const Modal = ({ classes, myCart, setModal, setMyCart, setModalClasses }:
         house: '27'
     }
 
-    const houseNumber = window.innerWidth > 376 ? '№ дома' : 'Дом';
     const entrance = window.innerWidth > 321 ? 'Подъезд' : 'Под.';
-    const flatLabel = window.innerWidth > 426 ? '№ квартиры/офиса' : 'Кв/оф.';
+    const [houseNumber, flatLabel] = window.innerWidth > 426
+        ? ['№ дома', '№ квартиры/офиса']
+        : ['Дом', 'Кв/оф.'];
 
     return (
         <>
