@@ -201,15 +201,23 @@
           background: url('../../../../public/img/modal/#{$standart}') no-repeat center / 30px;
         }
 
-        .#{$index}:hover {
-          background-image: url('../../../../public/img/modal/#{$hovered}');
+        @media (hover: hover) {
+          .#{$index}:hover {
+            background-image: url('../../../../public/img/modal/#{$hovered}');
+          }
+        }
+
+        @media (hover: none) {
+          .#{$index}:active {
+            background-image: url('../../../../public/img/modal/#{$hovered}');
+          }
         }
       };
 
       .item-price {
         font-size: 26px;
         font-weight: 900;
-        margin-left: 53px;
+        margin-left: 54px;
         width: 100px;
         text-align: center;
       }

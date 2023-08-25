@@ -9,6 +9,10 @@
 }
 
 @media screen and (max-width: 769px) {
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+
   .modal-layer {
     &.align-start {
       padding: 0;
@@ -17,10 +21,6 @@
     & .cart-items .cart-item {
       & .description-wrapper h3 {
         font-size: 18px;
-      }
-
-      & .item-price {
-        white-space: nowrap;
       }
     }
 
@@ -41,6 +41,17 @@
 
       & button {
         width: 194px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 769px) {
+  .modal-layer {
+    & .cart-items .cart-item {
+      & .item-price {
+        margin-left: 37px;
+        width: 360px;
       }
     }
   }
@@ -86,22 +97,6 @@
           & > div:last-child {
             padding: 0 12px;
           }
-        }
-
-        & .controls-block {
-          // Массив $hovers базируется в файле mixins.scss
-          @each $index, $value in $hovers {
-            $standart: nth(map-get($hovers, $index), 1);
-            $hovered: nth(map-get($hovers, $index), 2);
-
-            .#{$index}:hover {
-              background-image: url('../../../../public/img/modal/#{$standart}');
-            }
-
-            .#{$index}:active {
-              background-image: url('../../../../public/img/modal/#{$hovered}');
-            }
-          };
         }
 
         & .controls-block,
