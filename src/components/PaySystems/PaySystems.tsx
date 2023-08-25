@@ -1,4 +1,3 @@
-import React from "react";
 import './PaySystems.scss';
 // @ts-ignore
 import pay from './pay_systems.png';

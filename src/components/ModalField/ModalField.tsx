@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ModalFieldsProps } from "../../props/Main/interfaces";
 import './styles/ModalField.scss';
 import './styles/ModalField_adaptive.css';

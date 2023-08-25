@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { StatesProps } from "../../props/Main/interfaces";
 import './styles/Header.scss';
 import './styles/Header_adaptive.scss';

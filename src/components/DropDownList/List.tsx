@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ModalFieldsProps } from "../../props/Main/interfaces";
 import Select from 'react-select'
 import classNames from "classnames";

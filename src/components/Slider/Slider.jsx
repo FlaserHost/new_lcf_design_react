@@ -1,4 +1,3 @@
-import React from 'react';
 import { slides } from "./slides";
 import './Slider.scss';
 import { register } from 'swiper/element/bundle';

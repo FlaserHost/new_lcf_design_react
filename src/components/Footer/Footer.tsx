@@ -1,4 +1,3 @@
-import React from "react";
 import { links } from "./Links";
 import './styles/Footer.scss';
 import './styles/Footer_adaptive.scss';

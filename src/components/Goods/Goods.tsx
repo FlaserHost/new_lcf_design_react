@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { addToCart } from "../../js/functions";
 import { StatesProps } from "../../props/Main/interfaces";
 

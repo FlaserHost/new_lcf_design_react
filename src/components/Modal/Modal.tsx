@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ModalProps } from "../../props/Main/interfaces";
 import classNames from "classnames";
 import { Helmet } from 'react-helmet-async';

@@ -1,4 +1,3 @@
-import React from "react";
 import { photosPaths } from "./PhotosPaths";
 import './styles/Photos.scss';
 import './styles/Photos_adaptive.scss';

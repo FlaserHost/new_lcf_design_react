@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { amountChanger, deleteCartItem, fieldChecker } from "../../js/functions";
 import { StatesProps } from "../../props/Main/interfaces";
 
