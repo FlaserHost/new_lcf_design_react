@@ -7,7 +7,7 @@ export const EntryModal = () => {
                 <body className="not-scroll" />
             </Helmet>
             <section className="entryModal">
-                
+
             </section>
         </>
     );
