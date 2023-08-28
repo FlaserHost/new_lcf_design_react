@@ -1,0 +1,44 @@
+@import '../../../scss/mixins.scss';
+
+$entryModalBody: 'entry-modal-body';
+.#{$entryModalBody} {
+  width: 100%;
+  max-width: 500px;
+  background-color: #616161;
+  border-radius: 10px;
+  overflow-x: hidden;
+
+  & .modal-tabs {
+    @include flexPos(space-between, center);
+    position: relative;
+
+    & > * {
+      width: 50%;
+      height: 40px;
+    }
+
+    & > .carriage {
+      background-color: #f18700;
+      position: absolute;
+      top: 0;
+      transition-duration: .4s;
+    }
+
+    .auth-active > .carriage {
+      right: initial;
+      left: 0;
+    }
+
+    .reg-active > .carriage {
+      left: initial;
+      right: 0;
+    }
+
+    & > .#{$entryModalBody}__tab {
+      font-size: 20px;
+      color: #fff;
+      position: relative;
+      z-index: 4;
+    }
+  }
+}

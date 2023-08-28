@@ -5,7 +5,7 @@ import './styles/Header_adaptive.scss';
 // @ts-ignore
 import logo from './img/logo.png';
 
-export const Header = ({ cartSize, setModal, impulse, setImpulse }: StatesProps) => {
+export const Header = ({ cartSize, setModal, impulse, setImpulse, setEntryModal }: StatesProps) => {
     useEffect(() => {
         if (impulse.length > 0) {
             const timer = setTimeout(() => removeImpulse(), 900);
@@ -13,7 +13,7 @@ export const Header = ({ cartSize, setModal, impulse, setImpulse }: StatesProps)
         }
     }, [impulse]);
 
-    const removeImpulse = () => setImpulse((prev: any) => prev.slice(1));
+    const removeImpulse = () => setImpulse((prev: []) => prev.slice(1));
 
     return (
         <>
@@ -24,11 +24,11 @@ export const Header = ({ cartSize, setModal, impulse, setImpulse }: StatesProps)
                     </figure>
                     <p>
                         Доставка еды для всей семьи
-                        <time datatype="11:00-19:00">11:00 - 19:00</time>
+                        <time dateTime="11:00-19:00">11:00 - 19:00</time>
                     </p>
                     <p>
                         Прием заказов за сутки
-                        <time datatype="10:00-22:00">10:00 - 22:00</time>
+                        <time dateTime="10:00-22:00">10:00 - 22:00</time>
                     </p>
                     <div className="page-header__contacts">
                         <span>Контакты:</span>
@@ -40,7 +40,7 @@ export const Header = ({ cartSize, setModal, impulse, setImpulse }: StatesProps)
                         <span className="btn-title">Корзина</span>
                         <span className="items-amount">{cartSize}</span>
                     </button>
-                    <button className="reg-or-auth" type="button">
+                    <button className="reg-or-auth" type="button" onClick={() => setEntryModal(true)}>
                         <span>Войти</span>
                     </button>
                 </div>

@@ -13,6 +13,7 @@ export interface StatesProps {
     refs?: any;
     setRefs?: any;
     aosDelay?: number;
+    setEntryModal?: any;
 }
 
 export interface GoodsProps extends StatesProps {
