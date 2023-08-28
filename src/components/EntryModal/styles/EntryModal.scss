@@ -11,6 +11,7 @@ $entryModalBody: 'entry-modal-body';
   & .modal-tabs {
     @include flexPos(space-between, center);
     position: relative;
+    border-bottom: 1px solid #171717;
 
     & > * {
       width: 50%;
@@ -21,17 +22,15 @@ $entryModalBody: 'entry-modal-body';
       background-color: #f18700;
       position: absolute;
       top: 0;
-      transition-duration: .4s;
+      transition: .4s;
     }
 
-    .auth-active > .carriage {
-      right: initial;
+    &.auth-active > .carriage {
       left: 0;
     }
 
-    .reg-active > .carriage {
-      left: initial;
-      right: 0;
+    &.reg-active > .carriage {
+      left: 50%;
     }
 
     & > .#{$entryModalBody}__tab {
@@ -40,5 +39,10 @@ $entryModalBody: 'entry-modal-body';
       position: relative;
       z-index: 4;
     }
+  }
+
+  .auth-body {
+    width: 100%;
+    padding: 0 15px 20px;
   }
 }
