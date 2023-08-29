@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { ModalField } from "../ModalField/ModalField";
+import { StatesProps } from "../../props/Main/interfaces";
 import classNames from "classnames";
 import './styles/EntryModal.scss';
 
-export const EntryModal = () => {
+export const EntryModal = ({ setEntryModal }: StatesProps) => {
     const [activeTab, setActiveTab] = useState('auth');
     const modalClasses = classNames('modal-tabs', `${activeTab}-active`);
 
@@ -17,6 +18,7 @@ export const EntryModal = () => {
                 <article className="entry-modal-body">
                     <div className={modalClasses}>
                         <div className="carriage"></div>
+                        <button className="close-cross" onClick={() => setEntryModal(false)}></button>
                         <button className="entry-modal-body__tab auth-tab" type="button" onClick={() => setActiveTab('auth')}>Авторизация</button>
                         <button className="entry-modal-body__tab reg-tab" type="button" onClick={() => setActiveTab('reg')}>Регистрация</button>
                     </div>

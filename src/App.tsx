@@ -34,7 +34,7 @@ const App = () => {
   return (
      <HelmetProvider>
          {modal && <Modal classes={classes} myCart={myCart} setModal={setModal} setMyCart={setMyCart} setModalClasses={setModalClasses} />}
-         {entryModal && <EntryModal />}
+         {entryModal && <EntryModal setEntryModal={setEntryModal} />}
          <Header cartSize={myCart.size} setModal={setModal} impulse={impulse} setImpulse={setImpulse} setEntryModal={setEntryModal} />
          <Main myCart={myCart} setMyCart={setMyCart} setModalClasses={setModalClasses} setImpulse={setImpulse} />
          <Footer />

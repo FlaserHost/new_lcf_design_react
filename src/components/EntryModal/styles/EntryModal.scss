@@ -11,9 +11,9 @@ $entryModalBody: 'entry-modal-body';
   & .modal-tabs {
     @include flexPos(space-between, center);
     position: relative;
-    border-bottom: 1px solid #171717;
+    border-bottom: 1px solid #504B4A;
 
-    & > * {
+    & > *:not(.close-cross) {
       width: 50%;
       height: 40px;
     }
@@ -33,6 +33,13 @@ $entryModalBody: 'entry-modal-body';
       left: 50%;
     }
 
+    & > .close-cross {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 5;
+    }
+
     & > .#{$entryModalBody}__tab {
       font-size: 20px;
       color: #fff;
@@ -43,6 +50,19 @@ $entryModalBody: 'entry-modal-body';
 
   .auth-body {
     width: 100%;
-    padding: 0 15px 20px;
+    padding: 20px 15px;
+    background-color: #504B4A;
+
+    & .field-area {
+      width: 100%;
+
+      input {
+        width: 100%;
+      }
+    }
+
+    & .field-area:first-child {
+      margin-top: 0;
+    }
   }
 }
