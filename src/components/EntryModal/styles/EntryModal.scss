@@ -4,7 +4,7 @@ $entryModalBody: 'entry-modal-body';
 .#{$entryModalBody} {
   width: 100%;
   max-width: 500px;
-  background-color: #616161;
+  background-color: #504B4A;
   border-radius: 10px;
   overflow-x: hidden;
 
@@ -12,6 +12,7 @@ $entryModalBody: 'entry-modal-body';
     @include flexPos(space-between, center);
     position: relative;
     border-bottom: 1px solid #504B4A;
+    background-color: #616161;
 
     & > *:not(.close-cross) {
       width: 50%;
@@ -22,7 +23,7 @@ $entryModalBody: 'entry-modal-body';
       background-color: #f18700;
       position: absolute;
       top: 0;
-      transition: .4s;
+      transition-duration: .4s;
     }
 
     &.auth-active > .carriage {
@@ -41,7 +42,7 @@ $entryModalBody: 'entry-modal-body';
     }
 
     & > .#{$entryModalBody}__tab {
-      font-size: 20px;
+      font-size: 19px;
       color: #fff;
       position: relative;
       z-index: 4;
@@ -50,8 +51,7 @@ $entryModalBody: 'entry-modal-body';
 
   .auth-body {
     width: 100%;
-    padding: 20px 15px;
-    background-color: #504B4A;
+    padding: 20px 15px 0;
 
     & .field-area {
       width: 100%;
@@ -63,6 +63,20 @@ $entryModalBody: 'entry-modal-body';
 
     & .field-area:first-child {
       margin-top: 0;
+    }
+  }
+
+  .submit-btn-block {
+    width: 100%;
+    padding: 20px 15px 17px;
+
+    .modal-submit-btn {
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 12px;
+      background-color: #f18700;
+      color: #fff;
+      font-size: 20px;
     }
   }
 }
