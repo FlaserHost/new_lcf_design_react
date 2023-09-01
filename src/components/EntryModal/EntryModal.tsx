@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import { Helmet } from "react-helmet-async";
 import { ModalField } from "../ModalField/ModalField";
 import { StatesProps } from "../../props/Main/interfaces";
@@ -9,10 +9,26 @@ import './styles/EntryModal.scss';
 
 export const EntryModal = ({ setEntryModal }: StatesProps) => {
     const [activeTab, setActiveTab] = useState({modalType: 'auth', btnTitle: 'Авторизоваться'});
+    const entryModalForm = useRef<HTMLFormElement>(null);
     const modalClasses = classNames('modal-tabs', `${activeTab.modalType}-active`);
     const auth = activeTab.modalType === 'auth';
+    let inputsRefs: React.RefObject<HTMLInputElement>[] = [];
+    const [inRefs, setInRefs] = useState(inputsRefs);
 
-    const notify = () => toast("Wow so easy!");
+    const modalFieldsAttributeLabels = {
+        login: 'Логин',
+        password: 'Пароль',
+    };
+
+    const validation = () => {
+        const notify = (field: string) => toast.warning(`Поле ${field} обязательно для заполнения!`);
+
+        inRefs.forEach(item => {
+            // @ts-ignore
+            (item.current?.value === '' || item.current?.value === ' ') && notify(modalFieldsAttributeLabels[item.current?.name]);
+        });
+
+    }
 
     return (
         <>
@@ -21,7 +37,7 @@ export const EntryModal = ({ setEntryModal }: StatesProps) => {
             </Helmet>
             <section className="modal-layer entry-modal align-center">
                 <article className="entry-modal-body">
-                    <form action="#" method="POST">
+                    <form action="#" method="POST" ref={entryModalForm}>
                         <div className={modalClasses}>
                             <div className="carriage"></div>
                             <button className="close-cross" onClick={() => setEntryModal(false)}></button>
@@ -31,8 +47,8 @@ export const EntryModal = ({ setEntryModal }: StatesProps) => {
                         {
                             auth
                                 ? (<div className="auth-body">
-                                    <ModalField areaType='login' id='login' type='text' label="Логин" required={true} />
-                                    <ModalField areaType='password' id='password' type='password' label="Пароль" required={true} />
+                                    <ModalField areaType='login' id='login' type='text' label="Логин" required inputsRefs={setInRefs} />
+                                    <ModalField areaType='password' id='password' type='password' label="Пароль" required inputsRefs={setInRefs} />
                                 </div>)
                                 : ''
                         }
@@ -42,7 +58,7 @@ export const EntryModal = ({ setEntryModal }: StatesProps) => {
                                 type="submit"
                                 onClick={e => {
                                     e.preventDefault();
-                                    notify();
+                                    validation();
                                 }}
                             >
                                 {activeTab.btnTitle}

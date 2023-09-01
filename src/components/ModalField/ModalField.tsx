@@ -24,6 +24,8 @@ export const ModalField = (props: ModalFieldsProps) => {
         }
     }, [props.selfAddress]);
 
+    useEffect(() => (props.required && props.inputsRefs) && props.inputsRefs((prev: any) => [...prev, inputRef]), []);
+
     const insertValue = (value: string) => setValue(value);
 
     const insert = props.type !== 'textarea'

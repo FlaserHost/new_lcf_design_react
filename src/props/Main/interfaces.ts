@@ -33,4 +33,6 @@ export interface ModalFieldsProps {
     required?: boolean;
     list?: any;
     selfAddress?: any;
+
+    inputsRefs?: any;
 }
